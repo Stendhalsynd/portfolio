@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+:root {
+  --common-black : #000
+  --figma-black-2: #4f4f4f
+  --figma-black-3: #828282
+  --figma-black-4: #bdbdbd
+  --background-white: #fff
+  --lime-dark: #26c29f
+  --palette-red-60: #d91f11
+  --figma-yellow: #f2c94c
+}
