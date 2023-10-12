@@ -2,15 +2,14 @@ import logo from "./logo.svg"
 
 import { Counter } from "./features/counter/Counter"
 import "./App.css"
-import Typography from "./components/atoms/Typography/Typography"
-import Image from "./components/atoms/Image/Image"
-import Icon from "./components/atoms/Icon/Icon"
-import LabelButton from "./components/molecules/LabelButton/LabelButton"
 
-import color from "./static/colors/color.json"
+import { Image, Icon, Typography } from "@atoms/index"
 
-import avatar from "./static/images/image/img_avatar.png"
-import circle from "./static/images/icon/icon_circle.png"
+import { LabelButton } from "@molecules/index"
+
+import color from "@color"
+import avatar from "@image/img_avatar.png"
+import circle from "@icon/icon_circle.png"
 
 function App() {
   return (

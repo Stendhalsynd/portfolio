@@ -1,8 +1,8 @@
 import React, { ReactNode } from "react"
-import Typography from "../../atoms/Typography/Typography"
-
-import color from "../../../static/colors/color.json"
-import data from "../../../static/data/data.json"
+import { Typography } from "@atoms/index"
+import color from "@color"
+import data from "@data"
+import font from "@font"
 
 interface LabelButtonProps {
   variant: "default" | "double" | "font" | "lime"
@@ -21,11 +21,11 @@ const LabelButton: React.FC<LabelButtonProps> = ({
     case "double":
       buttonContent = (
         <button style={{ background: color.lime }}>
-          <Typography variant={"bungee2"} color={color.white}>
+          <Typography variant={font.bungee2} color={color.white}>
             {data.LabelButton.double.front}
           </Typography>
           <br />
-          <Typography variant={"bungee2"} color={color.black1}>
+          <Typography variant={font.bungee2} color={color.black1}>
             {data.LabelButton.double.back}
           </Typography>
         </button>
@@ -34,7 +34,7 @@ const LabelButton: React.FC<LabelButtonProps> = ({
     case "font":
       buttonContent = (
         <button>
-          <Typography variant={"bungee2"} color={color.white}>
+          <Typography variant={font.bungee2} color={color.white}>
             {content}
           </Typography>
         </button>
@@ -43,7 +43,7 @@ const LabelButton: React.FC<LabelButtonProps> = ({
     case "lime":
       buttonContent = (
         <button style={{ background: color.lime }}>
-          <Typography variant={"bungee36"} color={color.white}>
+          <Typography variant={font.bungee36} color={color.white}>
             {content}
           </Typography>
         </button>
@@ -52,7 +52,7 @@ const LabelButton: React.FC<LabelButtonProps> = ({
     default:
       buttonContent = (
         <button>
-          <Typography variant={"bungee36"} color={color.lime}>
+          <Typography variant={font.bungee36} color={color.lime}>
             {content}
           </Typography>
         </button>

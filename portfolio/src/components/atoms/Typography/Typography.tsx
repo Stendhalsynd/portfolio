@@ -2,16 +2,7 @@ import { ReactNode } from "react"
 
 export interface TypographyProps {
   children: ReactNode
-  variant:
-    | "bungee5"
-    | "bungee36"
-    | "bungee4title"
-    | "bungee4"
-    | "bungee2"
-    | "bungee14"
-    | "headline3"
-    | "title1"
-    | "title2"
+  variant: string
   color?: string
 }
 
