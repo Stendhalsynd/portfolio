@@ -13,7 +13,7 @@ import {
   IconTypographyButton,
 } from "@molecules/index"
 
-import { ImageList, IconTypographyList } from "@organisms/index"
+import { ImageList, IconTypographyList, Area } from "@organisms/index"
 
 import color from "@color"
 import data from "@data"
@@ -24,7 +24,25 @@ import circle from "@icon/icon_circle.png"
 function App() {
   return (
     <div>
-      <Typography variant="title2" color={color.lime}>
+      {/* <Label>
+        <Typography variant="bungee5" color={color.black2}>
+          {data.Intro.name.lastname}
+        </Typography>
+        <Typography variant="bungee5" color={color.black1}>
+          {data.Intro.name.firstname}
+        </Typography>
+      </Label>
+      <Label>
+        <Typography variant="bungee5" color={color.black3}>
+          {data.Intro.area}
+        </Typography>
+      </Label>
+      <Label>
+        <Typography variant="bungee5" color={color.black4}>
+          {data.Intro.job}
+        </Typography>
+      </Label> */}
+      <Typography variant="bungee5" color={color.lime}>
         test
       </Typography>
       <Image src={avatar} height={300} />
@@ -54,6 +72,28 @@ function App() {
         variant="communication"
       />
       <IconTypographyList contents={data.IconTypography.listItem} />
+      <Area>
+        <ImageList
+          images={data.ImageList.communication}
+          variant="communication"
+        />
+      </Area>
+      {data.Area.map((data, index, arr) => (
+        <Area
+          index={index}
+          length={arr.length}
+          title={data.title}
+          variant="main_menu"
+        />
+      ))}
+      {data.Area.map((data, index, arr) => (
+        <Area
+          index={index}
+          length={arr.length}
+          title={data.title}
+          variant="sub_menu"
+        />
+      ))}
     </div>
   )
 }

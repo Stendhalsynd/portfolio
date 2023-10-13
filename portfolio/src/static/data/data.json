@@ -1,4 +1,12 @@
 {
+  "Intro": {
+    "name": {
+      "lastname": "HONG",
+      "firstname": "JI HUN"
+    },
+    "area": "WEB",
+    "job": "DEVELOPER"
+  },
   "LabelButton": {
     "double": {
       "front": "FULL STACK",
@@ -63,5 +71,13 @@
     "deployment": ["ec2", "docker", "pm2", "netlify", "gitlab_cicd"],
     "versioncontrol": ["fork", "git", "gitlab", "github"],
     "communication": ["notion", "jira", "slack", "figma"]
+  },
+  "Area": [{ "title": "BEAUTY LAB" }, { "title": "DO IT" }],
+  "Icon": {
+    "size": {
+      "small": "small",
+      "big": "big",
+      "vector": "vector"
+    }
   }
 }

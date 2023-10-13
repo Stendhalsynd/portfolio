@@ -1,13 +1,14 @@
 {
   "black1": "#000",
-  "black2": "#4f4f4f",
+  "black2": "#4F4F4F",
   "black3": "#828282",
-  "black4": "#bdbdbd",
+  "black4": "#BDBDBD",
   "lightblack": "#161616",
-  "white": "#fff",
-  "lime": "#26c29f",
-  "red60": "#d91f11",
+  "white": "#FFFFFF",
+  "lime": "#26C29F",
+  "red60": "#D91F11",
   "red50": "#FA5343",
-  "yellow": "#f2c94c",
-  "green": "#43C478"
+  "yellow": "#F2C94C",
+  "green": "#43C478",
+  "green30": "#88DBA8"
 }
