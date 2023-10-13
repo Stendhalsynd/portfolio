@@ -45,5 +45,23 @@
     "type": {
       "circle": "circle"
     }
+  },
+  "ImageList": {
+    "frontend": ["html", "css", "js", "ts", "sass", "redux", "react", "recoil"],
+    "backend": [
+      "python",
+      "java",
+      "go",
+      "nest",
+      "sequeize",
+      "gorm",
+      "grpc",
+      "typeorm",
+      "springboot",
+      "mysql"
+    ],
+    "deployment": ["ec2", "docker", "pm2", "netlify", "gitlab_cicd"],
+    "versioncontrol": ["fork", "git", "gitlab", "github"],
+    "communication": ["notion", "jira", "slack", "figma"]
   }
 }

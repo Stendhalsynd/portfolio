@@ -16,6 +16,10 @@ export default defineConfig({
         replacement: resolve(__dirname, "src/components/molecules/"),
       },
       {
+        find: "@organisms",
+        replacement: resolve(__dirname, "src/components/organisms/"),
+      },
+      {
         find: "@data",
         replacement: resolve(__dirname, "src/static/data/data.json"),
       },

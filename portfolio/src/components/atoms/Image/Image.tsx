@@ -2,24 +2,24 @@ import React from "react"
 
 export interface ImageProps {
   src: string
-  width: number
-  height?: number
+  height: number
+  width?: number
   alt?: string
   className?: string
 }
 
 const Image: React.FC<ImageProps> = ({
   src,
-  width,
   height,
+  width,
   alt,
   className,
 }) => {
   return (
     <img
       src={src}
-      width={width}
       height={height}
+      width={width}
       alt={alt}
       className={className}
     />

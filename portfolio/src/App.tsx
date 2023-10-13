@@ -13,6 +13,8 @@ import {
   IconTypographyButton,
 } from "@molecules/index"
 
+import { ImageList } from "@organisms/index"
+
 import color from "@color"
 import data from "@data"
 
@@ -25,7 +27,7 @@ function App() {
       <Typography variant="title2" color={color.lime}>
         test
       </Typography>
-      <Image src={avatar} width={300} />
+      <Image src={avatar} height={300} />
       <Icon src={circle} />
       <LabelButton content={"skills"} variant={"double"} />
       <Label>
@@ -47,6 +49,10 @@ function App() {
         type={data.IconTypography.type.circle}
       />
       <IconTypographyButton content={data.IconTypography.button.development} />
+      <ImageList
+        images={data.ImageList.communication}
+        variant="communication"
+      />
     </div>
   )
 }

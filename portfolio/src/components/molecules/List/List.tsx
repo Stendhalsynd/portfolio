@@ -19,7 +19,6 @@ const Ul = styled.ul`
 interface ListProps {
   ordered?: boolean
   children: ReactNode
-  palette?: string
   reverse?: boolean
 }
 
