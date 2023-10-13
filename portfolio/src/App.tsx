@@ -13,7 +13,7 @@ import {
   IconTypographyButton,
 } from "@molecules/index"
 
-import { ImageList } from "@organisms/index"
+import { ImageList, IconTypographyList } from "@organisms/index"
 
 import color from "@color"
 import data from "@data"
@@ -53,6 +53,7 @@ function App() {
         images={data.ImageList.communication}
         variant="communication"
       />
+      <IconTypographyList contents={data.IconTypography.listItem} />
     </div>
   )
 }
