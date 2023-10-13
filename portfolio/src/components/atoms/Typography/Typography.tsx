@@ -67,7 +67,7 @@ const Typography: React.FC<TypographyProps> = ({
       fontWeight = 700
       lineHeight = "18px"
       break
-    default:
+    default: // bungee2
       fontFamily = "Bungee"
       fontSize = "16px"
       fontWeight = 400

@@ -22,5 +22,28 @@
     "github": "GITHUB",
     "velog": "VELOG",
     "domain": "배포도메인"
+  },
+  "IconTypography": {
+    "listItem": [
+      "BEM 방법론과 SCSS 를 능숙하게 사용할 수 있습니다.",
+      "Antd, Bootstrap, styled-component, CSS Module 을 활용할 수 있습니다.",
+      "css 애니메이션과 js 애니메이션 사용에 익숙합니다.",
+      "Restful 한 네이밍 컨벤션을 지키려 노력합니다.",
+      "typescript, golang, javascript 를 사용하여 mvc 패턴의 서버를 만들어 REST API 를 활용할 수 있습니다.",
+      "typeorm, gorm, sequelize 를 통해 orm 을 자유롭게 사용할 수 있습니다.",
+      "Gitlab 의 CI/CD 를 활용할 수 있습니다.",
+      "vitest 를 활용한 테스트 작성 경험이 있습니다.",
+      "좋은 개발문화에 대해 항상 고민합니다.",
+      "AWS 의 EC2, RDS, S3 를 활용할 수 있습니다.",
+      "Figma 툴 사용에 익숙합니다."
+    ],
+    "button": {
+      "feature": "FEATURE",
+      "frontend": "FRONTEND",
+      "development": "DEVELOPMENT"
+    },
+    "type": {
+      "circle": "circle"
+    }
   }
 }

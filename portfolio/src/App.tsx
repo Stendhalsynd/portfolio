@@ -5,9 +5,17 @@ import "./App.css"
 
 import { Image, Icon, Typography } from "@atoms/index"
 
-import { LabelButton, Label, HyperLink } from "@molecules/index"
+import {
+  LabelButton,
+  Label,
+  HyperLink,
+  IconTypography,
+  IconTypographyButton,
+} from "@molecules/index"
 
 import color from "@color"
+import data from "@data"
+
 import avatar from "@image/img_avatar.png"
 import circle from "@icon/icon_circle.png"
 
@@ -33,6 +41,12 @@ function App() {
       <HyperLink to="https://www.google.com/" variant="typo" />
       <br />
       <HyperLink to="https://www.google.com/" variant="icontypo_velog" />
+      <IconTypography content={data.IconTypography.listItem[0]} />
+      <IconTypography
+        content={data.IconTypography.button.feature}
+        type={data.IconTypography.type.circle}
+      />
+      <IconTypographyButton content={data.IconTypography.button.development} />
     </div>
   )
 }
