@@ -3,6 +3,24 @@
     "double": {
       "front": "FULL STACK",
       "back": "DEVELOPER"
+    },
+    "default": {
+      "aboutme": "ABOUT ME",
+      "skills": "SKILLS",
+      "carrer": "CAREER",
+      "activity": "ACTIVITY"
+    },
+    "lime": {
+      "projects": "PROJECTS"
+    },
+    "green": {
+      "domain": "배포도메인"
     }
+  },
+  "HyperLink": {
+    "email": "EMAIL ME",
+    "github": "GITHUB",
+    "velog": "VELOG",
+    "domain": "배포도메인"
   }
 }

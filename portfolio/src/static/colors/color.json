@@ -3,8 +3,11 @@
   "black2": "#4f4f4f",
   "black3": "#828282",
   "black4": "#bdbdbd",
+  "lightblack": "#161616",
   "white": "#fff",
   "lime": "#26c29f",
-  "red": "#d91f11",
-  "yellow": "#f2c94c"
+  "red60": "#d91f11",
+  "red50": "#FA5343",
+  "yellow": "#f2c94c",
+  "green": "#43C478"
 }

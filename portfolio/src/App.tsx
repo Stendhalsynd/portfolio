@@ -5,7 +5,7 @@ import "./App.css"
 
 import { Image, Icon, Typography } from "@atoms/index"
 
-import { LabelButton } from "@molecules/index"
+import { LabelButton, Label, HyperLink } from "@molecules/index"
 
 import color from "@color"
 import avatar from "@image/img_avatar.png"
@@ -20,54 +20,20 @@ function App() {
       <Image src={avatar} width={300} />
       <Icon src={circle} />
       <LabelButton content={"skills"} variant={"double"} />
+      <Label>
+        <Typography variant="title1" color="blue">
+          안녕하세요,
+        </Typography>
+        <Typography variant="bungee4" color="red">
+          이것은 Label 컴포넌트와 Typography 컴포넌트의 조합 예시입니다.
+        </Typography>
+      </Label>
+      <HyperLink to="https://www.google.com/" variant="icon_email" />
+      <br />
+      <HyperLink to="https://www.google.com/" variant="typo" />
+      <br />
+      <HyperLink to="https://www.google.com/" variant="icontypo_velog" />
     </div>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <Counter />
-    //     <p>
-    //       Edit <code>src/App.tsx</code> and save to reload.
-    //     </p>
-    //     <span>
-    //       <span>Learn </span>
-    //       <a
-    //         className="App-link"
-    //         href="https://reactjs.org/"
-    //         target="_blank"
-    //         rel="noopener noreferrer"
-    //       >
-    //         React
-    //       </a>
-    //       <span>, </span>
-    //       <a
-    //         className="App-link"
-    //         href="https://redux.js.org/"
-    //         target="_blank"
-    //         rel="noopener noreferrer"
-    //       >
-    //         Redux
-    //       </a>
-    //       <span>, </span>
-    //       <a
-    //         className="App-link"
-    //         href="https://redux-toolkit.js.org/"
-    //         target="_blank"
-    //         rel="noopener noreferrer"
-    //       >
-    //         Redux Toolkit
-    //       </a>
-    //       ,<span> and </span>
-    //       <a
-    //         className="App-link"
-    //         href="https://react-redux.js.org/"
-    //         target="_blank"
-    //         rel="noopener noreferrer"
-    //       >
-    //         React Redux
-    //       </a>
-    //     </span>
-    //   </header>
-    // </div>
   )
 }
 
