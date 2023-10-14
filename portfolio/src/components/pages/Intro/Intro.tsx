@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react"
+import React from "react"
 
 import { Image, Icon, Typography } from "@atoms/index"
 import { Label, LabelButton } from "@molecules/index"
@@ -9,6 +9,7 @@ import data from "@data"
 import styles from "@style"
 
 import myImage from "@image/img_myImage.png"
+import vector from "@icon/icon_vector.png"
 
 const textStyle = {
   width: "fit-content",
@@ -45,6 +46,17 @@ const Intro: React.FC = () => {
         top={225}
         right={5}
       />
+      <Container
+        variant="column"
+        style={{
+          width: "calc(100% - 246px)",
+          position: "absolute",
+          top: "515px",
+          left: "0",
+        }}
+      >
+        <Icon src={vector} size={data.Icon.size.vector} />
+      </Container>
       <Image
         src={myImage}
         height={336}

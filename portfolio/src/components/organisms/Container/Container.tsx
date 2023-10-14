@@ -2,12 +2,12 @@ import React, { CSSProperties, ReactNode } from "react"
 
 import styled from "styled-components"
 
-import color from "@color"
 import style from "@style"
 
 interface ContainerProps {
   children: ReactNode
   variant: "column" | "row"
+
   style?: CSSProperties
 }
 

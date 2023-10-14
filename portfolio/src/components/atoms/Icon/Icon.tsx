@@ -4,10 +4,23 @@ interface IconProps {
   src: string
   size?: string
   alt?: string
-  className?: string
+  pos?: string
+  top?: number | string
+  left?: number | string
+  right?: number | string
+  bottom?: number | string
 }
 
-const Icon: React.FC<IconProps> = ({ src, size = "small", alt, className }) => {
+const Icon: React.FC<IconProps> = ({
+  src,
+  size = "small",
+  alt,
+  pos,
+  top,
+  left,
+  right,
+  bottom,
+}) => {
   let width, height
   switch (size) {
     case "small":
@@ -20,7 +33,7 @@ const Icon: React.FC<IconProps> = ({ src, size = "small", alt, className }) => {
       break
     case "vector":
       width = "45px"
-      height = "45px"
+      height = "34px"
   }
   return (
     <img
@@ -28,7 +41,19 @@ const Icon: React.FC<IconProps> = ({ src, size = "small", alt, className }) => {
       width={width}
       height={height}
       alt={alt}
-      className={className}
+      style={{
+        position: pos ? "absolute" : "relative",
+        alignSelf:
+          pos === "absolute_left"
+            ? "flex-start"
+            : pos === "absolute_right"
+            ? "flex-end"
+            : undefined,
+        top,
+        left,
+        right,
+        bottom,
+      }}
     />
   )
 }
