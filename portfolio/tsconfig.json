@@ -21,9 +21,11 @@
       "@atoms/*": ["src/components/atoms/*"],
       "@molecules/*": ["src/components/molecules/*"],
       "@organisms/*": ["src/components/organisms/*"],
+      "@pages/*": ["src/components/pages/*"],
       "@data": ["src/static/data/data.json"],
       "@color": ["src/static/colors/color.json"],
       "@font": ["src/static/fonts/font.json"],
+      "@style": ["src/static/styles/style.json"],
       "@icon": ["src/static/images/icon/*"],
       "@image": ["src/static/images/image/*"]
     }

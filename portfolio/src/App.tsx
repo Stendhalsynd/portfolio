@@ -4,7 +4,6 @@ import { Counter } from "./features/counter/Counter"
 import "./App.css"
 
 import { Image, Icon, Typography } from "@atoms/index"
-
 import {
   LabelButton,
   Label,
@@ -12,11 +11,18 @@ import {
   IconTypography,
   IconTypographyButton,
 } from "@molecules/index"
-
-import { ImageList, IconTypographyList, Area } from "@organisms/index"
+import {
+  ImageList,
+  IconTypographyList,
+  Area,
+  Container,
+} from "@organisms/index"
+import { Intro } from "@pages/index"
 
 import color from "@color"
 import data from "@data"
+import font from "@font"
+import style from "@style"
 
 import avatar from "@image/img_avatar.png"
 import circle from "@icon/icon_circle.png"
@@ -24,35 +30,18 @@ import circle from "@icon/icon_circle.png"
 function App() {
   return (
     <div>
-      {/* <Label>
-        <Typography variant="bungee5" color={color.black2}>
-          {data.Intro.name.lastname}
-        </Typography>
-        <Typography variant="bungee5" color={color.black1}>
-          {data.Intro.name.firstname}
-        </Typography>
-      </Label>
-      <Label>
-        <Typography variant="bungee5" color={color.black3}>
-          {data.Intro.area}
-        </Typography>
-      </Label>
-      <Label>
-        <Typography variant="bungee5" color={color.black4}>
-          {data.Intro.job}
-        </Typography>
-      </Label> */}
-      <Typography variant="bungee5" color={color.lime}>
+      <Intro />
+      <Typography variant={font.bungee5} color={color.lime}>
         test
       </Typography>
       <Image src={avatar} height={300} />
       <Icon src={circle} />
       <LabelButton content={"skills"} variant={"double"} />
       <Label>
-        <Typography variant="title1" color="blue">
+        <Typography variant={font.title1} color={color.yellow}>
           안녕하세요,
         </Typography>
-        <Typography variant="bungee4" color="red">
+        <Typography variant={font.bungee4} color={color.red60}>
           이것은 Label 컴포넌트와 Typography 컴포넌트의 조합 예시입니다.
         </Typography>
       </Label>
@@ -94,6 +83,40 @@ function App() {
           variant="sub_menu"
         />
       ))}
+      <Container
+        variant="column"
+        style={{
+          background: color.white,
+          borderRadius: style.borderRadius.br30,
+          padding: style.padding.pd30,
+        }}
+      >
+        <Image src={avatar} height={300} />
+        {data.Container.Label.map((label, labelIndex) => (
+          <Label key={labelIndex}>
+            {label.Typography.map((text, textIndex) => (
+              <Typography
+                key={textIndex}
+                variant={font.title1}
+                color={textIndex % 2 === 0 ? color.black1 : color.red60}
+              >
+                {text}
+              </Typography>
+            ))}
+          </Label>
+        ))}
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <HyperLink to="https://www.google.com/" variant="icon_email" />
+          <HyperLink to="https://www.google.com/" variant="icon_github" />
+          <HyperLink to="https://www.google.com/" variant="icon_velog" />
+        </div>
+      </Container>
     </div>
   )
 }

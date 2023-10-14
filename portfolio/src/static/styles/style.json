@@ -1,0 +1,28 @@
+{
+  "borderRadius": {
+    "br20": "20px",
+    "br30": "30px",
+    "br35": "35px",
+    "br50": "50px"
+  },
+  "display": {
+    "flex": "flex"
+  },
+  "flex": {
+    "justifyContent": {
+      "center": "center"
+    },
+    "alignItems": {
+      "center": "center"
+    }
+  },
+  "padding": {
+    "pd30": "30px"
+  },
+  "position": {
+    "absolute": {
+      "right": "absolute_right",
+      "left": "absolute_left"
+    }
+  }
+}

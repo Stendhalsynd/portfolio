@@ -20,6 +20,10 @@ export default defineConfig({
         replacement: resolve(__dirname, "src/components/organisms/"),
       },
       {
+        find: "@pages",
+        replacement: resolve(__dirname, "src/components/pages/"),
+      },
+      {
         find: "@data",
         replacement: resolve(__dirname, "src/static/data/data.json"),
       },
@@ -30,6 +34,10 @@ export default defineConfig({
       {
         find: "@font",
         replacement: resolve(__dirname, "src/static/fonts/font.json"),
+      },
+      {
+        find: "@style",
+        replacement: resolve(__dirname, "src/static/styles/style.json"),
       },
       {
         find: "@icon",

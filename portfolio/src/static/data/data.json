@@ -5,7 +5,37 @@
       "firstname": "JI HUN"
     },
     "area": "WEB",
-    "job": "DEVELOPER"
+    "job": "DEVELOPER",
+    "LabelButton": {
+      "Label": {
+        "Typography": ["FULL STACK", "DEVELOPER"]
+      }
+    }
+  },
+  "Container": {
+    "Label": [
+      {
+        "Typography": [
+          "안녕하세요. 끊임없이 성장하고 발전하는",
+          "주니어 웹개발자",
+          "입니다."
+        ]
+      },
+      {
+        "Typography": [
+          "개발을 더 효율적으로 할 수 있는 기술을 적용해 나가는게 재밌습니다.",
+          "새로운 시도를 두려워하지 않는 풀스택 웹 개발자",
+          "를 지향합니다."
+        ]
+      },
+      {
+        "Typography": [
+          "학습할때 접하게 되는 모르는 분야를",
+          "꼼꼼하게 알아가는 습관",
+          "이 제 장점입니다."
+        ]
+      }
+    ]
   },
   "LabelButton": {
     "double": {

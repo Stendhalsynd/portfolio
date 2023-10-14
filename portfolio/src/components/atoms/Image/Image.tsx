@@ -1,29 +1,15 @@
-import React from "react"
+import React, { CSSProperties } from "react"
 
 export interface ImageProps {
   src: string
   height: number
   width?: number
   alt?: string
-  className?: string
+  style?: CSSProperties
 }
 
-const Image: React.FC<ImageProps> = ({
-  src,
-  height,
-  width,
-  alt,
-  className,
-}) => {
-  return (
-    <img
-      src={src}
-      height={height}
-      width={width}
-      alt={alt}
-      className={className}
-    />
-  )
+const Image: React.FC<ImageProps> = ({ src, height, width, alt, style }) => {
+  return <img src={src} height={height} width={width} alt={alt} style={style} />
 }
 
 export default Image

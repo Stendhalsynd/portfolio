@@ -1,19 +1,32 @@
-import React, { ReactNode } from "react"
+import React, { CSSProperties, ReactNode } from "react"
 import { Typography } from "@atoms/index"
 
 import color from "@color"
 import data from "@data"
 import font from "@font"
+import styles from "@style"
 
 interface LabelButtonProps {
   variant: "default" | "double" | "font" | "lime" | "green"
+  pos?: string
+  top?: number
+  left?: number
+  right?: number
+  bottom?: number
   content?: ReactNode
+  style?: CSSProperties
   // onClick: () => void
 }
 
 const LabelButton: React.FC<LabelButtonProps> = ({
   variant = "default",
+  pos,
+  top,
+  left,
+  right,
+  bottom,
   content,
+  style,
   // onClick,
 }) => {
   let buttonContent: ReactNode
@@ -21,7 +34,27 @@ const LabelButton: React.FC<LabelButtonProps> = ({
   switch (variant) {
     case "double":
       buttonContent = (
-        <button style={{ background: color.lime }}>
+        <button
+          style={{
+            background: color.lime,
+            borderRadius: styles.borderRadius.br35,
+            border: `5px solid ${color.white}`,
+            padding: "10px 20px",
+            transform: "rotate(17.82deg)",
+            position: pos ? "absolute" : "relative",
+            alignSelf:
+              pos === "absolute_left"
+                ? "flex-start"
+                : pos === "absolute_right"
+                ? "flex-end"
+                : undefined,
+            top,
+            left,
+            right,
+            bottom,
+            ...style,
+          }}
+        >
           <Typography variant={font.bungee2} color={color.white}>
             {data.LabelButton.double.front}
           </Typography>
@@ -34,7 +67,7 @@ const LabelButton: React.FC<LabelButtonProps> = ({
       break
     case "font":
       buttonContent = (
-        <button>
+        <button style={{ ...style }}>
           <Typography variant={font.bungee2} color={color.white}>
             {content}
           </Typography>
@@ -43,7 +76,7 @@ const LabelButton: React.FC<LabelButtonProps> = ({
       break
     case "lime":
       buttonContent = (
-        <button style={{ background: color.lime }}>
+        <button style={{ background: color.lime, ...style }}>
           <Typography variant={font.bungee36} color={color.white}>
             {data.LabelButton.lime.projects}
           </Typography>
@@ -52,7 +85,7 @@ const LabelButton: React.FC<LabelButtonProps> = ({
       break
     case "green":
       buttonContent = (
-        <button style={{ background: color.green }}>
+        <button style={{ background: color.green, ...style }}>
           <Typography variant={font.title2} color={color.lightblack}>
             {data.LabelButton.green.domain}
           </Typography>
@@ -61,7 +94,7 @@ const LabelButton: React.FC<LabelButtonProps> = ({
       break
     default:
       buttonContent = (
-        <button>
+        <button style={{ ...style }}>
           <Typography variant={font.bungee36} color={color.lime}>
             {content}
           </Typography>
