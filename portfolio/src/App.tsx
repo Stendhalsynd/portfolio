@@ -16,8 +16,9 @@ import {
   IconTypographyList,
   Area,
   Container,
+  AreaContainer,
 } from "@organisms/index"
-import { Intro, AboutMe } from "@pages/index"
+import { Intro, AboutMe, Skills } from "@pages/index"
 
 import color from "@color"
 import data from "@data"
@@ -32,6 +33,7 @@ function App() {
     <div>
       <Intro />
       <AboutMe />
+      <Skills />
       <Typography variant={font.bungee5} color={color.lime}>
         test
       </Typography>

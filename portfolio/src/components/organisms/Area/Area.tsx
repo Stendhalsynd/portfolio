@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react"
+import React, { CSSProperties, ReactNode } from "react"
 
 import { Icon, Typography } from "@atoms/index"
 import { Label } from "@molecules/index"
@@ -17,6 +17,7 @@ interface AreaProps {
   length?: number
   title?: string
   variant?: "default" | "main_menu" | "sub_menu"
+  style?: CSSProperties
 }
 
 const Area: React.FC<AreaProps> = ({
@@ -25,6 +26,7 @@ const Area: React.FC<AreaProps> = ({
   length,
   title,
   variant = "default",
+  style,
 }) => {
   const areaStyle: React.CSSProperties = {
     borderRadius: "50px",
@@ -35,6 +37,7 @@ const Area: React.FC<AreaProps> = ({
     justifyContent: "center",
     alignContent: "center",
     width: "fit-content",
+    ...style,
   }
 
   let areaContent: ReactNode
@@ -49,6 +52,7 @@ const Area: React.FC<AreaProps> = ({
             padding: "15px 20px",
             borderRadius: "35px",
             alignItems: "center",
+            ...style,
           }}
         >
           <Icon src={leftArrow} size={data.Icon.size.big} />
@@ -79,6 +83,7 @@ const Area: React.FC<AreaProps> = ({
             padding: "0 20px",
             borderRadius: "35px",
             alignItems: "center",
+            ...style,
           }}
         >
           <Icon src={leftArrow} size={data.Icon.size.big} />

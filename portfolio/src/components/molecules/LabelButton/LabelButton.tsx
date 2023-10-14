@@ -74,7 +74,7 @@ const LabelButton: React.FC<LabelButtonProps> = ({
       break
     case "font":
       buttonContent = (
-        <button style={{ ...style }}>
+        <button style={{ background: "none", border: "none", ...style }}>
           <Typography variant={font.bungee2} color={color.white}>
             {content}
           </Typography>

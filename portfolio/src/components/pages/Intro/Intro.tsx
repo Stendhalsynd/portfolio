@@ -19,7 +19,7 @@ const textStyle = {
 
 const Intro: React.FC = () => {
   return (
-    <Container variant="column">
+    <Container variant="column" style={{ background: color.white }}>
       <Container variant="column" style={textStyle}>
         <Label>
           <Typography variant="bungee5" color={color.black2}>

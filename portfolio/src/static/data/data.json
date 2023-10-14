@@ -48,6 +48,13 @@
       "carrer": "CAREER",
       "activity": "ACTIVITY"
     },
+    "font": {
+      "frontend": "FRONTEND",
+      "backend": "BACKEND",
+      "deployment": "DEPLOYMENT",
+      "versioncontrol": "VERSION CONTROL",
+      "communication": "COMMUNICATION"
+    },
     "lime": {
       "projects": "PROJECTS"
     },
