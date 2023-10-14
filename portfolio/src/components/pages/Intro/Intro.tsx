@@ -23,7 +23,7 @@ const Intro: React.FC = () => {
       <Container variant="column" style={textStyle}>
         <Label>
           <Typography variant="bungee5" color={color.black2}>
-            {data.Intro.name.lastname}
+            {data.Intro.name.lastname}&nbsp;
           </Typography>
           <Typography variant="bungee5" color={color.black1}>
             {data.Intro.name.firstname}
@@ -43,8 +43,9 @@ const Intro: React.FC = () => {
       <LabelButton
         variant="double"
         pos={styles.position.absolute.right}
-        top={225}
+        top={235}
         right={5}
+        style={{ zIndex: 1 }}
       />
       <Container
         variant="column"
@@ -60,7 +61,12 @@ const Intro: React.FC = () => {
       <Image
         src={myImage}
         height={336}
-        style={{ alignSelf: "flex-end", marginTop: "46px" }}
+        style={{
+          alignSelf: "flex-end",
+          marginTop: "46px",
+          position: "relative",
+          bottom: "-10px",
+        }}
       />
     </Container>
   )

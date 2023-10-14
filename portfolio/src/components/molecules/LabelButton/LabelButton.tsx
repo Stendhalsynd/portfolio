@@ -18,6 +18,13 @@ interface LabelButtonProps {
   // onClick: () => void
 }
 
+const defaultStyle = {
+  padding: "12px 26px",
+  borderRadius: styles.borderRadius.br50,
+  background: color.white,
+  border: "none",
+}
+
 const LabelButton: React.FC<LabelButtonProps> = ({
   variant = "default",
   pos,
@@ -94,7 +101,7 @@ const LabelButton: React.FC<LabelButtonProps> = ({
       break
     default:
       buttonContent = (
-        <button style={{ ...style }}>
+        <button style={{ ...style, ...defaultStyle }}>
           <Typography variant={font.bungee36} color={color.lime}>
             {content}
           </Typography>

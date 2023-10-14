@@ -19,6 +19,9 @@
   "padding": {
     "pd30": "30px"
   },
+  "margin": {
+    "mg50": "50px"
+  },
   "position": {
     "absolute": {
       "right": "absolute_right",
