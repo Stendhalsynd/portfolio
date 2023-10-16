@@ -57,6 +57,13 @@ const ImageList: React.FC<ImageListProps> = ({
   size = "mobile",
 }) => {
   let height = size === "mobile" ? 35 : 75
+  let gap = size === "mobile" ? "13px" : "25px"
+  let justifyContent =
+    variant === "frontend" ||
+    variant === "deployment" ||
+    variant === "communication"
+      ? "flex-start"
+      : "flex-end"
 
   let imagePaths: Record<string, string> = {}
 
@@ -117,7 +124,7 @@ const ImageList: React.FC<ImageListProps> = ({
   }
 
   return (
-    <List ordered={false}>
+    <List ordered={false} gap={gap} justifyContent={justifyContent}>
       {images.map((imagePath, index) => (
         <li key={index}>
           <Image src={imagePaths[imagePath]} height={height} alt={imagePath} />

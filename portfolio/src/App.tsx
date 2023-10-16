@@ -18,7 +18,7 @@ import {
   Container,
   AreaContainer,
 } from "@organisms/index"
-import { Intro, AboutMe, Skills } from "@pages/index"
+import { Intro, AboutMe, Skills, Projects } from "@pages/index"
 
 import color from "@color"
 import data from "@data"
@@ -34,7 +34,8 @@ function App() {
       <Intro />
       <AboutMe />
       <Skills />
-      <Typography variant={font.bungee5} color={color.lime}>
+      <Projects />
+      {/* <Typography variant={font.bungee5} color={color.lime}>
         test
       </Typography>
       <Image src={avatar} height={300} />
@@ -119,7 +120,7 @@ function App() {
           <HyperLink to="https://www.google.com/" variant="icon_github" />
           <HyperLink to="https://www.google.com/" variant="icon_velog" />
         </div>
-      </Container>
+      </Container> */}
     </div>
   )
 }

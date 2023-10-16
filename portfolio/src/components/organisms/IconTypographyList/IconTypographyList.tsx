@@ -10,7 +10,11 @@ const IconTypographyList: React.FC<IconTypographyListProps> = ({
   contents,
 }) => {
   return (
-    <List ordered={false}>
+    <List
+      ordered={false}
+      flexDirection="column"
+      style={{ alignSelf: "flex-start" }}
+    >
       {contents.map((content, index) => (
         <li key={index}>
           <IconTypography content={content} />

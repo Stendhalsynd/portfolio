@@ -98,7 +98,7 @@
       "java",
       "go",
       "nest",
-      "sequeize",
+      "sequelize",
       "gorm",
       "grpc",
       "typeorm",

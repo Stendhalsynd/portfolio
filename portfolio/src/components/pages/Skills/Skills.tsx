@@ -1,7 +1,8 @@
 import React from "react"
 
+import { Divider } from "@atoms/index"
 import { LabelButton } from "@molecules/index"
-import { Container, Area, ImageList, AreaContainer } from "@organisms/index"
+import { Container, AreaContainer, IconTypographyList } from "@organisms/index"
 
 import color from "@color"
 import data from "@data"
@@ -31,27 +32,14 @@ const Skills: React.FC = () => {
       <AreaContainer variant="left" type="deployment" />
       <AreaContainer variant="right" type="versioncontrol" />
       <AreaContainer variant="left" type="communication" />
-      {/* <Area>
-        <ImageList images={data.ImageList.frontend} variant="frontend" />
-      </Area>
-      <Area>
-        <ImageList images={data.ImageList.backend} variant="backend" />
-      </Area>
-      <Area>
-        <ImageList images={data.ImageList.deployment} variant="deployment" />
-      </Area>
-      <Area>
-        <ImageList
-          images={data.ImageList.versioncontrol}
-          variant="versioncontrol"
-        />
-      </Area>
-      <Area>
-        <ImageList
-          images={data.ImageList.communication}
-          variant="communication"
-        />
-      </Area> */}
+      <Divider variant="top" />
+      <IconTypographyList contents={data.IconTypography.listItem} />
+      <Divider variant="bottom" />
+      <LabelButton
+        content={data.LabelButton.default.skills}
+        variant={"lime"}
+        style={{ marginBottom: "53px", bottom: "-329vh", zIndex: 1 }}
+      />
     </Container>
   )
 }

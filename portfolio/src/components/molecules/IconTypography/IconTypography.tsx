@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react"
 
 import { Icon, Typography } from "@atoms/index"
+import { Label } from "@molecules/index"
 
 import font from "@font"
 import color from "@color"
@@ -20,25 +21,37 @@ const IconTypography: React.FC<IconTypographyProps> = ({
   iconSize = "small",
 }) => {
   let iconTypographyContent: ReactNode
+  let containerStyle = {
+    display: "flex",
+    alignItems: "center",
+    marginLeft: "5vw",
+  }
+  let labelStyle = {
+    padding: "5px 10px",
+  }
 
   switch (type) {
     case "circle":
       iconTypographyContent = (
-        <div>
+        <div style={containerStyle}>
           <Icon src={circle} size={iconSize} />
-          <Typography variant={font.bungee14} color={color.red50}>
-            {content}
-          </Typography>
+          <Label style={labelStyle}>
+            <Typography variant={font.bungee14} color={color.red50}>
+              {content}
+            </Typography>
+          </Label>
         </div>
       )
       break
     default:
       iconTypographyContent = (
-        <div>
+        <div style={containerStyle}>
           <Icon src={check} size={iconSize} />
-          <Typography variant={font.title1} color={color.white}>
-            {content}
-          </Typography>
+          <Label style={labelStyle}>
+            <Typography variant={font.title1} color={color.white}>
+              {content}
+            </Typography>
+          </Label>
         </div>
       )
   }

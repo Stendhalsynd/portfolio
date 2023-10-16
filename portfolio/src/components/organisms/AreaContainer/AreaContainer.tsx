@@ -24,8 +24,16 @@ const AreaContainer: React.FC<AreaContainerProps> = ({
   const containerStyle: CSSProperties = {
     display: "flex",
     flexDirection: "column",
+    width: "90vw",
+    marginTop: "29px",
     alignItems: variant === "left" ? "flex-start" : "flex-end",
     ...style,
+  }
+
+  const areaStyle: CSSProperties = {
+    width: "fit-content",
+    maxWidth: "50vw",
+    marginTop: "13.47px",
   }
 
   let areaContainerContent: ReactNode
@@ -37,8 +45,9 @@ const AreaContainer: React.FC<AreaContainerProps> = ({
           <LabelButton
             content={data.LabelButton.font.frontend}
             variant={"font"}
+            style={{ transform: "rotate(-10.194deg)" }}
           />
-          <Area style={{ width: "50vw" }}>
+          <Area style={areaStyle}>
             <ImageList images={data.ImageList.frontend} variant="frontend" />
           </Area>
         </div>
@@ -50,8 +59,9 @@ const AreaContainer: React.FC<AreaContainerProps> = ({
           <LabelButton
             content={data.LabelButton.font.backend}
             variant={"font"}
+            style={{ transform: "rotate(10.194deg)" }}
           />
-          <Area style={{ width: "50vw" }}>
+          <Area style={areaStyle}>
             <ImageList images={data.ImageList.backend} variant="backend" />
           </Area>
         </div>
@@ -63,8 +73,9 @@ const AreaContainer: React.FC<AreaContainerProps> = ({
           <LabelButton
             content={data.LabelButton.font.deployment}
             variant={"font"}
+            style={{ transform: "rotate(-10.194deg)" }}
           />
-          <Area style={{ width: "50vw" }}>
+          <Area style={areaStyle}>
             <ImageList
               images={data.ImageList.deployment}
               variant="deployment"
@@ -79,8 +90,9 @@ const AreaContainer: React.FC<AreaContainerProps> = ({
           <LabelButton
             content={data.LabelButton.font.versioncontrol}
             variant={"font"}
+            style={{ transform: "rotate(10.194deg)" }}
           />
-          <Area style={{ width: "50vw" }}>
+          <Area style={areaStyle}>
             <ImageList
               images={data.ImageList.versioncontrol}
               variant="versioncontrol"
@@ -95,8 +107,9 @@ const AreaContainer: React.FC<AreaContainerProps> = ({
           <LabelButton
             content={data.LabelButton.font.communication}
             variant={"font"}
+            style={{ transform: "rotate(-10.194deg)" }}
           />
-          <Area style={{ width: "50vw" }}>
+          <Area style={areaStyle}>
             <ImageList
               images={data.ImageList.communication}
               variant="communication"

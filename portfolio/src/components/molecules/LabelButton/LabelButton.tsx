@@ -25,6 +25,13 @@ const defaultStyle = {
   border: "none",
 }
 
+const limeStyle = {
+  border: "none",
+  borderRadius: "50px",
+  padding: "12.37px 24.79px",
+  background: color.lime,
+}
+
 const LabelButton: React.FC<LabelButtonProps> = ({
   variant = "default",
   pos,
@@ -83,7 +90,7 @@ const LabelButton: React.FC<LabelButtonProps> = ({
       break
     case "lime":
       buttonContent = (
-        <button style={{ background: color.lime, ...style }}>
+        <button style={{ ...limeStyle, ...style, position: "absolute" }}>
           <Typography variant={font.bungee36} color={color.white}>
             {data.LabelButton.lime.projects}
           </Typography>

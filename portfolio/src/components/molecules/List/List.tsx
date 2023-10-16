@@ -1,10 +1,9 @@
 import React, { CSSProperties, ReactNode } from "react"
 import styled, { css } from "styled-components"
+import { FlexDirection } from "src/static/styles"
 
 const listStyles = css`
   font-family: "bungee2";
-  margin: 1rem 0;
-  padding-left: 1.6rem;
   line-height: 1.7rem;
   color: black;
   display: flex;
@@ -22,12 +21,26 @@ interface ListProps {
   ordered?: boolean
   children: ReactNode
   reverse?: boolean
+  gap?: string
+  justifyContent?: string
+  flexDirection?: FlexDirection
   style?: CSSProperties
 }
 
-const List: React.FC<ListProps> = ({ ordered, children, style }) => {
+const List: React.FC<ListProps> = ({
+  ordered,
+  children,
+  gap,
+  justifyContent,
+  flexDirection,
+  style,
+}) => {
   const ListComponent = ordered ? Ol : Ul
-  return <ListComponent style={{ ...style }}>{children}</ListComponent>
+  return (
+    <ListComponent style={{ ...style, gap, flexDirection, justifyContent }}>
+      {children}
+    </ListComponent>
+  )
 }
 
 export default List
