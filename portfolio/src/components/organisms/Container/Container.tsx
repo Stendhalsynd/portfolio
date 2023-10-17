@@ -7,7 +7,6 @@ import style from "@style"
 interface ContainerProps {
   children: ReactNode
   variant: "column" | "row"
-
   style?: CSSProperties
 }
 

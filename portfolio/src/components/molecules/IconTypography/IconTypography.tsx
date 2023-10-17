@@ -24,10 +24,10 @@ const IconTypography: React.FC<IconTypographyProps> = ({
   let containerStyle = {
     display: "flex",
     alignItems: "center",
-    marginLeft: "5vw",
+    marginLeft: "2vw",
   }
   let labelStyle = {
-    padding: "5px 10px",
+    padding: "8px",
   }
 
   switch (type) {

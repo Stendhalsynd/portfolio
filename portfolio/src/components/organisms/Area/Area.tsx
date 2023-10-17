@@ -50,15 +50,18 @@ const Area: React.FC<AreaProps> = ({
             display: "flex",
             width: "fit-content",
             padding: "15px 20px",
-            borderRadius: "35px",
+            borderRadius: "100px",
             alignItems: "center",
+            border: "10px solid white",
             ...style,
           }}
         >
           <Icon src={leftArrow} size={data.Icon.size.big} />
           <Label
             style={{
-              padding: "0 13px",
+              padding: "0 10vw",
+              lineHeight: "30px",
+              textAlign: "center",
             }}
           >
             <Typography variant={font.bungee4title} color={color.white}>

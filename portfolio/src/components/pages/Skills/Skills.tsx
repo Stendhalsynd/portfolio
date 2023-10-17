@@ -35,11 +35,6 @@ const Skills: React.FC = () => {
       <Divider variant="top" />
       <IconTypographyList contents={data.IconTypography.listItem} />
       <Divider variant="bottom" />
-      <LabelButton
-        content={data.LabelButton.default.skills}
-        variant={"lime"}
-        style={{ marginBottom: "53px", bottom: "-329vh", zIndex: 1 }}
-      />
     </Container>
   )
 }

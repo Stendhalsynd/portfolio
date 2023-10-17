@@ -90,7 +90,7 @@ const LabelButton: React.FC<LabelButtonProps> = ({
       break
     case "lime":
       buttonContent = (
-        <button style={{ ...limeStyle, ...style, position: "absolute" }}>
+        <button style={{ ...limeStyle, ...style }}>
           <Typography variant={font.bungee36} color={color.white}>
             {data.LabelButton.lime.projects}
           </Typography>
