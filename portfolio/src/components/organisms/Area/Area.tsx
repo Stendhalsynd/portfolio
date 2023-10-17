@@ -85,6 +85,7 @@ const Area: React.FC<AreaProps> = ({
             width: "fit-content",
             padding: "0 20px",
             borderRadius: "35px",
+            border: `5px solid ${color.black5}`,
             alignItems: "center",
             ...style,
           }}
@@ -92,11 +93,11 @@ const Area: React.FC<AreaProps> = ({
           <Icon src={leftArrow} size={data.Icon.size.big} />
           <Label
             style={{
-              padding: "0 13px",
+              padding: "9.5px 13px",
             }}
           >
             <Typography variant={font.bungee2} color={color.white}>
-              0{index + 1}/0{length}
+              0{index + 1} / 0{length}
             </Typography>
           </Label>
           <Icon src={rightArrow} size={data.Icon.size.big} />
