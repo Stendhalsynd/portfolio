@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 
 import { useSetRecoilState } from "recoil"
-import { isMobileState } from "./recoil"
+import { isMobileState, currentWidthState } from "./recoil"
 
 import "./App.css"
 import { Footer } from "@organisms/index"
@@ -16,11 +16,13 @@ import {
 
 function App() {
   const setMobileState = useSetRecoilState(isMobileState)
+  const setCurrentWidthState = useSetRecoilState(currentWidthState)
 
   useEffect(() => {
     const handleResize = () => {
       const newWidth = window.innerWidth
       setMobileState(newWidth < 780)
+      setCurrentWidthState(newWidth)
     }
 
     handleResize() // 초기 렌더링 시 설정
@@ -29,7 +31,7 @@ function App() {
     return () => {
       window.removeEventListener("resize", handleResize)
     }
-  }, [setMobileState])
+  }, [setMobileState, setCurrentWidthState])
 
   return (
     <>

@@ -2,7 +2,7 @@ import React, { CSSProperties } from "react"
 
 export interface ImageProps {
   src: string
-  height: number
+  height: number | string
   width?: number
   alt?: string
   style?: CSSProperties

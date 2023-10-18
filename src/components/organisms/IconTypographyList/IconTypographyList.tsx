@@ -13,7 +13,7 @@ const IconTypographyList: React.FC<IconTypographyListProps> = ({
     <List
       ordered={false}
       flexDirection="column"
-      style={{ alignSelf: "flex-start" }}
+      style={{ width: "90vw", maxWidth: "1200px" }}
     >
       {contents.map((content, index) => (
         <li key={index}>

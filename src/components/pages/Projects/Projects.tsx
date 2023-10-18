@@ -1,5 +1,8 @@
 import React from "react"
 
+import { useRecoilValue } from "recoil"
+import { isMobileState, currentWidthState } from "src/recoil"
+
 import { Typography, Image } from "@atoms/index"
 import {
   Label,
@@ -14,6 +17,8 @@ import doit from "@image/img_project2_screen1.png"
 
 import data from "@data"
 import color from "@color"
+
+import background from "@image/img_background.png"
 
 interface ProjectsProps {
   index?: number
@@ -46,37 +51,55 @@ const renderLabelBlock = (labelData: LabelData[]) => {
 }
 
 const Projects: React.FC<ProjectsProps> = ({ index, length, title }) => {
+  const isMobile = useRecoilValue(isMobileState)
+  const currentWidth = useRecoilValue(currentWidthState)
+
   const containerStyle = {
     height: "fit-content",
     background: color.black5,
-    padding: "45px 45px 23px",
-    width: "100vw",
+    padding: "40px 45px 23px",
+    width: isMobile ? "100vw" : "40vw",
+    minWidth: "460px",
+    borderTopLeftRadius: "50px",
+    borderTopRightRadius: isMobile ? "50px" : 0,
+    borderBottomLeftRadius: isMobile ? 0 : "50px",
   }
 
   return (
-    <Container variant="column">
+    <Container
+      variant="column"
+      style={{
+        backgroundImage: `url(${background})`,
+        background: "center center cover repeat",
+        backgroundSize: "50% auto",
+        animation: "moveBackground 3600s linear infinite",
+      }}
+    >
+      <LabelButton content={data.LabelButton.default.skills} variant={"lime"} />
       {/* 1번 프로젝트 Beauty Lab */}
       <Container
-        variant="column"
+        variant={isMobile ? "column" : "row"}
         style={{
           background: color.white,
-          borderBottom: `15px solid ${color.lime}`,
+          width: "100vw",
+          maxWidth: "1400px",
+          borderRadius: "50px",
         }}
       >
         <Container
           variant="column"
-          style={{ ...containerStyle, boxSizing: "border-box" }}
+          style={{
+            ...containerStyle,
+            boxSizing: "border-box",
+            position: "relative",
+          }}
         >
-          <LabelButton
-            content={data.LabelButton.default.skills}
-            variant={"lime"}
-            style={{ marginBottom: "45px" }}
-          />
           <Area
             index={0}
             length={data.Area.length}
             title={data.Area[0].title}
             variant="main_menu"
+            style={{ marginTop: "15px" }}
           />
           <Container
             variant="column"
@@ -116,7 +139,13 @@ const Projects: React.FC<ProjectsProps> = ({ index, length, title }) => {
                 <IconTypographyButton
                   content={data.IconTypography.button.feature}
                 />
-                <Label style={{ padding: "0 15px", maxWidth: "40vw" }}>
+                <Label
+                  style={{
+                    padding: "0 15px",
+                    maxWidth: "40vw",
+                    textAlign: "end",
+                  }}
+                >
                   <Typography variant="title2">
                     {data.Area[0].Skills.feature.label}
                   </Typography>
@@ -164,23 +193,38 @@ const Projects: React.FC<ProjectsProps> = ({ index, length, title }) => {
           variant="column"
           style={{
             padding: "31.5px 70px 36.91px",
+            width: "60vw",
+            overflow: "auto",
           }}
         >
-          <Area
+          {/* <Area
             index={0}
             length={data.Area.length}
             title={data.Area[0].title}
             variant="sub_menu"
+            style={{ marginBottom: "30px" }}
+          /> */}
+          <Image
+            src={beautylab}
+            height={
+              isMobile
+                ? 300
+                : currentWidth < 1090
+                ? currentWidth * 0.3
+                : "450vw"
+            }
           />
-          <Image src={beautylab} height={244} style={{ marginTop: "32px" }} />
         </Container>
       </Container>
       {/* 2번 프로젝트 Do IT */}
       <Container
-        variant="column"
+        variant={isMobile ? "column" : "row"}
         style={{
           background: color.white,
-          borderBottom: `15px solid ${color.lime}`,
+          width: "100vw",
+          marginTop: "45px",
+          maxWidth: "1400px",
+          borderRadius: "50px",
         }}
       >
         <Container
@@ -296,15 +340,27 @@ const Projects: React.FC<ProjectsProps> = ({ index, length, title }) => {
           variant="column"
           style={{
             padding: "31.5px 70px 36.91px",
+            width: "60vw",
+            overflow: "auto",
           }}
         >
-          <Area
+          {/* <Area
             index={1}
             length={data.Area.length}
             title={data.Area[1].title}
             variant="sub_menu"
+          /> */}
+          <Image
+            src={doit}
+            height={
+              isMobile
+                ? 300
+                : currentWidth < 1090
+                ? currentWidth * 0.3
+                : "450vw"
+            }
+            style={{ marginTop: "32px" }}
           />
-          <Image src={doit} height={244} style={{ marginTop: "32px" }} />
         </Container>
       </Container>
     </Container>
@@ -321,12 +377,12 @@ const HyperLinkSection: React.FC<HyperLinkSectionProps> = ({ domain }) => (
     }}
   >
     <HyperLink
-      to={data.HyperLink.githubUrl}
+      to={data.HyperLink.projectGithubUrl[domain]}
       variant="icon_github"
       colors="green"
     />
     <HyperLink
-      to={data.HyperLink.velogUrl}
+      to={data.HyperLink.projectVelogUrl[domain]}
       variant="icon_velog"
       colors="green"
     />

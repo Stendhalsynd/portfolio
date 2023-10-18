@@ -49,17 +49,17 @@ const Area: React.FC<AreaProps> = ({
             background: color.green30,
             display: "flex",
             width: "fit-content",
-            padding: "15px 20px",
+            padding: "5px 20px",
             borderRadius: "100px",
             alignItems: "center",
             border: "10px solid white",
             ...style,
           }}
         >
-          <Icon src={leftArrow} size={data.Icon.size.big} />
+          {/* <Icon src={leftArrow} size={data.Icon.size.big} /> */}
           <Label
             style={{
-              padding: "0 10vw",
+              padding: "0 6vw",
               lineHeight: "30px",
               textAlign: "center",
             }}
@@ -72,7 +72,7 @@ const Area: React.FC<AreaProps> = ({
               {title}
             </Typography>
           </Label>
-          <Icon src={rightArrow} size={data.Icon.size.big} />
+          {/* <Icon src={rightArrow} size={data.Icon.size.big} /> */}
         </div>
       )
       break

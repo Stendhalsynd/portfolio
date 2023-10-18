@@ -1,5 +1,8 @@
 import React, { ReactNode } from "react"
 
+import { useRecoilValue } from "recoil"
+import { isMobileState } from "src/recoil"
+
 import { Icon, Typography } from "@atoms/index"
 import { Label } from "@molecules/index"
 
@@ -20,6 +23,8 @@ const IconTypography: React.FC<IconTypographyProps> = ({
   type = "check",
   iconSize = "small",
 }) => {
+  const isMobile = useRecoilValue(isMobileState)
+
   let iconTypographyContent: ReactNode
   let containerStyle = {
     display: "flex",
@@ -27,7 +32,7 @@ const IconTypography: React.FC<IconTypographyProps> = ({
     marginLeft: "2vw",
   }
   let labelStyle = {
-    padding: "8px",
+    padding: isMobile ? "8px" : "5px 20px",
   }
 
   switch (type) {
@@ -48,7 +53,10 @@ const IconTypography: React.FC<IconTypographyProps> = ({
         <div style={containerStyle}>
           <Icon src={check} size={iconSize} />
           <Label style={labelStyle}>
-            <Typography variant={font.title1} color={color.white}>
+            <Typography
+              variant={isMobile ? font.title1 : font.headline4}
+              color={color.white}
+            >
               {content}
             </Typography>
           </Label>

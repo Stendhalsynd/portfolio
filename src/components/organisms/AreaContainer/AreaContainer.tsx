@@ -1,5 +1,8 @@
 import React, { CSSProperties, ReactNode } from "react"
 
+import { useRecoilValue } from "recoil"
+import { isMobileState } from "src/recoil"
+
 import { Area, ImageList } from "@organisms/index"
 import { LabelButton } from "@molecules/index"
 
@@ -21,12 +24,15 @@ const AreaContainer: React.FC<AreaContainerProps> = ({
   type,
   style,
 }) => {
+  const isMobile = useRecoilValue(isMobileState)
+
   const containerStyle: CSSProperties = {
     display: "flex",
     flexDirection: "column",
     width: "90vw",
     marginTop: "29px",
     alignItems: variant === "left" ? "flex-start" : "flex-end",
+    maxWidth: "1200px",
     ...style,
   }
 
@@ -44,7 +50,7 @@ const AreaContainer: React.FC<AreaContainerProps> = ({
         <div style={containerStyle}>
           <LabelButton
             content={data.LabelButton.font.frontend}
-            variant={"font"}
+            variant={isMobile ? "font" : "bigfont"}
             style={{ transform: "rotate(-10.194deg)" }}
           />
           <Area style={areaStyle}>
@@ -58,7 +64,7 @@ const AreaContainer: React.FC<AreaContainerProps> = ({
         <div style={containerStyle}>
           <LabelButton
             content={data.LabelButton.font.backend}
-            variant={"font"}
+            variant={isMobile ? "font" : "bigfont"}
             style={{ transform: "rotate(10.194deg)" }}
           />
           <Area style={areaStyle}>
@@ -72,7 +78,7 @@ const AreaContainer: React.FC<AreaContainerProps> = ({
         <div style={containerStyle}>
           <LabelButton
             content={data.LabelButton.font.deployment}
-            variant={"font"}
+            variant={isMobile ? "font" : "bigfont"}
             style={{ transform: "rotate(-10.194deg)" }}
           />
           <Area style={areaStyle}>
@@ -89,7 +95,7 @@ const AreaContainer: React.FC<AreaContainerProps> = ({
         <div style={containerStyle}>
           <LabelButton
             content={data.LabelButton.font.versioncontrol}
-            variant={"font"}
+            variant={isMobile ? "font" : "bigfont"}
             style={{ transform: "rotate(10.194deg)" }}
           />
           <Area style={areaStyle}>
@@ -106,7 +112,7 @@ const AreaContainer: React.FC<AreaContainerProps> = ({
         <div style={containerStyle}>
           <LabelButton
             content={data.LabelButton.font.communication}
-            variant={"font"}
+            variant={isMobile ? "font" : "bigfont"}
             style={{ transform: "rotate(-10.194deg)" }}
           />
           <Area style={areaStyle}>

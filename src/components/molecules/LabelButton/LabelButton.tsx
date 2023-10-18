@@ -1,4 +1,8 @@
 import React, { CSSProperties, ReactNode } from "react"
+
+import { useRecoilValue } from "recoil"
+import { isMobileState } from "src/recoil"
+
 import { Typography } from "@atoms/index"
 
 import color from "@color"
@@ -15,7 +19,6 @@ interface LabelButtonProps {
   bottom?: number
   content?: ReactNode
   style?: CSSProperties
-  // onClick: () => void
 }
 
 const defaultStyle = {
@@ -25,11 +28,11 @@ const defaultStyle = {
   border: "none",
 }
 
-const limeStyle = {
+const bigDefaultStyle = {
+  padding: "12px 114px",
+  borderRadius: styles.borderRadius.br50,
+  background: color.white,
   border: "none",
-  borderRadius: "50px",
-  padding: "12.37px 24.79px",
-  background: color.lime,
 }
 
 const LabelButton: React.FC<LabelButtonProps> = ({
@@ -41,9 +44,19 @@ const LabelButton: React.FC<LabelButtonProps> = ({
   bottom,
   content,
   style,
-  // onClick,
 }) => {
+  const isMobile = useRecoilValue(isMobileState)
   let buttonContent: ReactNode
+
+  const limeStyle = {
+    border: "none",
+    borderRadius: "50px",
+    padding: isMobile ? "12.37px 24.79px" : "4.5px 60px",
+    background: color.lime,
+    top: "-45px",
+    position: "absolute",
+    zIndex: 4,
+  }
 
   switch (variant) {
     case "double":
@@ -119,10 +132,22 @@ const LabelButton: React.FC<LabelButtonProps> = ({
         </button>
       )
       break
+    case "bigfont":
+      buttonContent = (
+        <button style={{ background: "none", border: "none", ...style }}>
+          <Typography variant={font.bungee} color={color.white}>
+            {content}
+          </Typography>
+        </button>
+      )
+      break
     case "lime":
       buttonContent = (
-        <button style={{ ...limeStyle, ...style }}>
-          <Typography variant={font.bungee36} color={color.white}>
+        <button style={{ ...limeStyle, ...style, position: "relative" }}>
+          <Typography
+            variant={isMobile ? font.bungee36 : font.bungee55}
+            color={color.white}
+          >
             {data.LabelButton.lime.projects}
           </Typography>
         </button>
@@ -133,6 +158,15 @@ const LabelButton: React.FC<LabelButtonProps> = ({
         <button style={{ background: color.green, ...style }}>
           <Typography variant={font.title2} color={color.lightblack}>
             {data.LabelButton.green.domain}
+          </Typography>
+        </button>
+      )
+      break
+    case "bigdefault":
+      buttonContent = (
+        <button style={{ ...style, ...bigDefaultStyle }}>
+          <Typography variant={font.bungee5} color={color.lime}>
+            {content}
           </Typography>
         </button>
       )

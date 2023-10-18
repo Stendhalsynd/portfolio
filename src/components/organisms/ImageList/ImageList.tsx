@@ -1,5 +1,8 @@
 import React from "react"
 
+import { useRecoilValue } from "recoil"
+import { isMobileState } from "src/recoil"
+
 import { Image } from "@atoms/index"
 
 import { List } from "@molecules/index"
@@ -48,16 +51,13 @@ interface ImageListProps {
     | "deployment"
     | "versioncontrol"
     | "communication"
-  size?: "web" | "mobile"
 }
 
-const ImageList: React.FC<ImageListProps> = ({
-  images,
-  variant,
-  size = "mobile",
-}) => {
-  let height = size === "mobile" ? 35 : 75
-  let gap = size === "mobile" ? "13px" : "25px"
+const ImageList: React.FC<ImageListProps> = ({ images, variant }) => {
+  const isMobile = useRecoilValue(isMobileState)
+
+  let height = isMobile ? 35 : 75
+  let gap = isMobile ? "13px" : "25px"
   let justifyContent =
     variant === "frontend" ||
     variant === "deployment" ||

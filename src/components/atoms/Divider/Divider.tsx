@@ -14,6 +14,7 @@ const Divider: React.FC<DividerProps> = ({ variant }) => {
     padding: "18px 0",
     marginTop,
     marginBottom,
+    maxWidth: "1200px",
   }
 
   const roundedStyle: React.CSSProperties = {

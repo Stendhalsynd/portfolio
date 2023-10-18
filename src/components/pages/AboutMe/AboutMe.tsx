@@ -3,6 +3,8 @@ import React from "react"
 import { useRecoilValue } from "recoil"
 import { isMobileState } from "src/recoil"
 
+import Lottie from "react-lottie-player"
+
 import { Image, Typography } from "@atoms/index"
 import { Label, LabelButton, HyperLink } from "@molecules/index"
 import { Container } from "@organisms/index"
@@ -14,9 +16,11 @@ import font from "@font"
 
 import avatar from "@image/img_avatar.png"
 
+import paperPlaneLottie from "../../../static/lotties/lottie_paperplane.json"
+
 const AboutMe: React.FC = () => {
   const isMobile = useRecoilValue(isMobileState)
-  const containerPadding = isMobile ? "45px" : styles.padding.pd10vw
+  const containerPadding = isMobile ? "45px" : "50px 4vw"
   const emailVariant = isMobile ? "icon_email" : "icontypo_email"
   const githubVariant = isMobile ? "icon_github" : "icontypo_github"
   const velogVariant = isMobile ? "icon_velog" : "icontypo_velog"
@@ -26,7 +30,7 @@ const AboutMe: React.FC = () => {
       variant="column"
       style={{ background: color.lime, padding: "50px 35px" }}
     >
-      <Container variant="column">
+      <Container variant="column" style={{ maxWidth: "1200px" }}>
         <LabelButton
           variant="default"
           content={data.LabelButton.default.aboutme}
@@ -40,24 +44,44 @@ const AboutMe: React.FC = () => {
             marginTop: styles.margin.mg50,
           }}
         >
-          <Image src={avatar} height={177} />
-          <Container
-            variant="column"
-            style={{ alignItems: "flex-start", padding: "30px 0" }}
-          >
-            {data.Container.Label.map((label, labelIndex) => (
-              <Label key={labelIndex} style={{ padding: "10px 0" }}>
-                {label.Typography.map((text, textIndex) => (
-                  <Typography
-                    key={textIndex}
-                    variant={font.title1}
-                    color={textIndex % 2 === 0 ? color.black1 : color.red60}
-                  >
-                    {text}&nbsp;
-                  </Typography>
-                ))}
-              </Label>
-            ))}
+          <Container variant={isMobile ? "column" : "row"}>
+            <Container variant="column" style={{ position: "relative" }}>
+              <Image
+                src={avatar}
+                height={isMobile ? 177 : 210}
+                style={{ maxHeight: "330px" }}
+              />
+              <Lottie
+                loop
+                animationData={paperPlaneLottie}
+                play
+                style={{
+                  width: 130,
+                  height: 130,
+                  position: "absolute",
+                  top: "-28px",
+                  left: "0px",
+                }}
+              />
+            </Container>
+            <Container
+              variant="column"
+              style={{ alignItems: "flex-start", padding: "10vw 0" }}
+            >
+              {data.Container.Label.map((label, labelIndex) => (
+                <Label key={labelIndex} style={{ padding: "10px 1.5vw" }}>
+                  {label.Typography.map((text, textIndex) => (
+                    <Typography
+                      key={textIndex}
+                      variant={isMobile ? font.title1 : font.headline3}
+                      color={textIndex % 2 === 0 ? color.black1 : color.red60}
+                    >
+                      {text}&nbsp;
+                    </Typography>
+                  ))}
+                </Label>
+              ))}
+            </Container>
           </Container>
           <div
             style={{

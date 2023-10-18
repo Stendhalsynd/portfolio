@@ -69,9 +69,9 @@ const Typography: React.FC<TypographyProps> = ({
       fontWeight = 400
       lineHeight = "normal"
       break
-    case "bungee96":
+    case "bungee75":
       fontFamily = "Bungee"
-      fontSize = "96px"
+      fontSize = "75px"
       fontWeight = 400
       lineHeight = "normal"
       break
@@ -80,6 +80,12 @@ const Typography: React.FC<TypographyProps> = ({
       fontSize = "20px"
       fontWeight = 700
       lineHeight = "24px"
+      break
+    case "headline4":
+      fontFamily = "Roboto"
+      fontSize = "24px"
+      fontWeight = 800
+      lineHeight = "40px"
       break
     case "title1":
       fontFamily = "Roboto"

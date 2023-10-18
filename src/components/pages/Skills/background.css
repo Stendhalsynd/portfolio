@@ -3,6 +3,6 @@
     background-position: 0 0;
   }
   100% {
-    background-position: 0 -100px; /* 위로 100px 이동 */
+    background-position: 0 -15000px; /* 위로 100px 이동 */
   }
 }
