@@ -37,3 +37,32 @@
     transform: translateY(0px);
   }
 }
+
+/* Intro labelButton 애니메이션 */
+@keyframes moveUpDown {
+  0%,
+  100% {
+    transform: rotate(17.82deg) translateY(0);
+  }
+  50% {
+    transform: rotate(17.82deg) translateY(10px);
+  }
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -100px; /* 위로 100px 이동 */
+  }
+}
+
+@keyframes moveBackgroundUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}

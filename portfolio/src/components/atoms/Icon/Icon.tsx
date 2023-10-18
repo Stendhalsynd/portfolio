@@ -1,4 +1,4 @@
-import React from "react"
+import React, { CSSProperties } from "react"
 
 interface IconProps {
   src: string
@@ -9,6 +9,7 @@ interface IconProps {
   left?: number | string
   right?: number | string
   bottom?: number | string
+  style?: CSSProperties
 }
 
 const Icon: React.FC<IconProps> = ({
@@ -20,12 +21,17 @@ const Icon: React.FC<IconProps> = ({
   left,
   right,
   bottom,
+  style,
 }) => {
   let width, height
   switch (size) {
     case "small":
       width = "20px"
       height = "20px"
+      break
+    case "middle":
+      width = "24px"
+      height = "24px"
       break
     case "big":
       width = "35px"
@@ -53,6 +59,7 @@ const Icon: React.FC<IconProps> = ({
         left,
         right,
         bottom,
+        ...style,
       }}
     />
   )

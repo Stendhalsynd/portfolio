@@ -23,12 +23,13 @@ const Career: React.FC = () => {
         background: "center center cover repeat",
         backgroundSize: "contain",
         padding: "40px 10vw",
+        alignItems: "flex-start",
       }}
     >
       <LabelButton
         content={data.LabelButton.default.carrer}
         variant={"default"}
-        style={{ marginBottom: "53px" }}
+        style={{ marginBottom: "53px", alignSelf: "center" }}
       />
       <Container variant="column" style={{ alignItems: "flex-start" }}>
         <CareerSection index={0} />

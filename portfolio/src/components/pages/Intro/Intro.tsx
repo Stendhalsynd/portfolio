@@ -1,6 +1,13 @@
 import React from "react"
 
-import { Image, Icon, Typography } from "@atoms/index"
+import { useRecoilValue } from "recoil"
+import { isMobileState } from "src/recoil"
+
+import Lottie from "react-lottie-player"
+
+import styled from "styled-components"
+
+import { Image, Typography } from "@atoms/index"
 import { Label, LabelButton } from "@molecules/index"
 import { Container } from "@organisms/index"
 
@@ -9,58 +16,89 @@ import data from "@data"
 import styles from "@style"
 
 import myImage from "@image/img_myImage.png"
-import vector from "@icon/icon_vector.png"
 
-const textStyle = {
-  width: "fit-content",
-  alignItems: "flex-start",
-  margin: "50px 35px 0",
-}
+import arrowDownLottie from "../../../static/lotties/lottie_arrow_down.json"
+import webLottie from "../../../static/lotties/lottie_web.json"
+
+const TypographyWrapper = styled.div`
+  width: fit-content;
+  align-self: flex-start;
+  margin: 50px 35px 0;
+  position: relative;
+  left: 11vw;
+`
 
 const Intro: React.FC = () => {
+  const isMobile = useRecoilValue(isMobileState)
+
+  let typoVariant = isMobile ? "bungee5" : "bungee96"
+  let buttonVariant = isMobile ? "double" : "bigdouble"
+  let imageHeight = isMobile ? 336 : 473
+  let labelButtonTop = isMobile ? 235 : 400
+  let iconTop = isMobile ? "457px" : "780px"
+
   return (
-    <Container variant="column" style={{ background: color.white }}>
-      <Container variant="column" style={textStyle}>
+    <Container variant="column" style={{ background: color.white, zIndex: 1 }}>
+      <TypographyWrapper>
         <Label>
-          <Typography variant="bungee5" color={color.black2}>
+          <Typography variant={typoVariant} color={color.black2}>
             {data.Intro.name.lastname}&nbsp;
           </Typography>
-          <Typography variant="bungee5" color={color.black1}>
+          <Typography variant={typoVariant} color={color.black1}>
             {data.Intro.name.firstname}
           </Typography>
         </Label>
         <Label>
-          <Typography variant="bungee5" color={color.black3}>
+          <Typography variant={typoVariant} color={color.black3}>
             {data.Intro.area}
           </Typography>
         </Label>
         <Label>
-          <Typography variant="bungee5" color={color.black4}>
+          <Typography variant={typoVariant} color={color.black4}>
             {data.Intro.job}
           </Typography>
         </Label>
-      </Container>
+      </TypographyWrapper>
+
+      {!isMobile && (
+        <Lottie
+          loop
+          animationData={webLottie}
+          play
+          style={{
+            width: 330,
+            height: 330,
+            position: "absolute",
+            top: 480,
+            left: "13vw",
+          }}
+        />
+      )}
+
       <LabelButton
-        variant="double"
+        variant={buttonVariant}
         pos={styles.position.absolute.right}
-        top={235}
+        top={labelButtonTop}
         right={5}
-        style={{ zIndex: 1 }}
+        style={{ zIndex: 1, animation: "moveUpDown 1.5s ease infinite" }}
       />
-      <Container
-        variant="column"
+
+      <Lottie
+        loop
+        animationData={arrowDownLottie}
+        play
         style={{
-          width: "calc(100% - 246px)",
+          width: 130,
+          height: 130,
           position: "absolute",
-          top: "515px",
-          left: "0",
+          top: iconTop,
+          left: "20vw",
         }}
-      >
-        <Icon src={vector} size={data.Icon.size.vector} />
-      </Container>
+      />
+
       <Image
         src={myImage}
-        height={336}
+        height={imageHeight}
         style={{
           alignSelf: "flex-end",
           marginTop: "46px",

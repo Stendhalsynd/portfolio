@@ -47,6 +47,14 @@ export default defineConfig({
         find: "@image",
         replacement: resolve(__dirname, "src/static/images/image/"),
       },
+      {
+        find: "@lottie",
+        replacement: resolve(__dirname, "src/static/lotties/lottie_web.json"),
+      },
+      {
+        find: "@lotties",
+        replacement: resolve(__dirname, "src/static/lotties/"),
+      },
     ],
   },
   plugins: [react(), tsconfigPaths()],

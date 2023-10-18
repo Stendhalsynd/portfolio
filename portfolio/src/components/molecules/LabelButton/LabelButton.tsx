@@ -7,7 +7,7 @@ import font from "@font"
 import styles from "@style"
 
 interface LabelButtonProps {
-  variant: "default" | "double" | "font" | "lime" | "green"
+  variant: string
   pos?: string
   top?: number
   left?: number
@@ -54,7 +54,6 @@ const LabelButton: React.FC<LabelButtonProps> = ({
             borderRadius: styles.borderRadius.br35,
             border: `5px solid ${color.white}`,
             padding: "10px 20px",
-            transform: "rotate(17.82deg)",
             position: pos ? "absolute" : "relative",
             alignSelf:
               pos === "absolute_left"
@@ -74,6 +73,38 @@ const LabelButton: React.FC<LabelButtonProps> = ({
           </Typography>
           <br />
           <Typography variant={font.bungee2} color={color.black1}>
+            {data.LabelButton.double.back}
+          </Typography>
+        </button>
+      )
+      break
+    case "bigdouble":
+      buttonContent = (
+        <button
+          style={{
+            background: color.lime,
+            borderRadius: styles.borderRadius.br50,
+            border: `10px solid ${color.white}`,
+            padding: "10px 20px",
+            position: pos ? "absolute" : "relative",
+            alignSelf:
+              pos === "absolute_left"
+                ? "flex-start"
+                : pos === "absolute_right"
+                ? "flex-end"
+                : undefined,
+            top,
+            left,
+            right,
+            bottom,
+            ...style,
+          }}
+        >
+          <Typography variant={font.bungee4title} color={color.white}>
+            {data.LabelButton.double.front}
+          </Typography>
+          <br />
+          <Typography variant={font.bungee4title} color={color.black1}>
             {data.LabelButton.double.back}
           </Typography>
         </button>

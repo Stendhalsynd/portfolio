@@ -21,23 +21,11 @@ const Typography: React.FC<TypographyProps> = ({
       fontWeight = 400
       lineHeight = "normal"
       break
-    case "bungee36":
+    case "bungee14":
       fontFamily = "Bungee"
-      fontSize = "36px"
-      fontWeight = 400
-      lineHeight = "normal"
-      break
-    case "bungee4title":
-      fontFamily = "Bungee"
-      fontSize = "24px"
+      fontSize = "14px"
       fontWeight = 400
       lineHeight = "20px"
-      break
-    case "bungee4":
-      fontFamily = "Bungee"
-      fontSize = "24px"
-      fontWeight = 400
-      lineHeight = "16px"
       break
     case "bungee2":
       fontFamily = "Bungee"
@@ -45,11 +33,47 @@ const Typography: React.FC<TypographyProps> = ({
       fontWeight = 400
       lineHeight = "16px"
       break
-    case "bungee14":
+    case "bungee4":
       fontFamily = "Bungee"
-      fontSize = "14px"
+      fontSize = "24px"
+      fontWeight = 400
+      lineHeight = "16px"
+      break
+    case "bungee4title":
+      fontFamily = "Bungee"
+      fontSize = "24px"
       fontWeight = 400
       lineHeight = "20px"
+      break
+    case "bungee":
+      fontFamily = "Bungee"
+      fontSize = "32px"
+      fontWeight = 400
+      lineHeight = "40px"
+      break
+    case "bungee36":
+      fontFamily = "Bungee"
+      fontSize = "36px"
+      fontWeight = 400
+      lineHeight = "normal"
+      break
+    case "bungee48":
+      fontFamily = "Bungee"
+      fontSize = "48px"
+      fontWeight = 400
+      lineHeight = "normal"
+      break
+    case "bungee55":
+      fontFamily = "Bungee"
+      fontSize = "55px"
+      fontWeight = 400
+      lineHeight = "normal"
+      break
+    case "bungee96":
+      fontFamily = "Bungee"
+      fontSize = "96px"
+      fontWeight = 400
+      lineHeight = "normal"
       break
     case "headline3":
       fontFamily = "Roboto"

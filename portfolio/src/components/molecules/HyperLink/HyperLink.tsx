@@ -79,8 +79,8 @@ const HyperLink: React.FC<HyperLinkProps> = ({
     case "icontypo_email":
       hyperLinkContent = (
         <a href={to} style={{ ...linkStyle }}>
-          <Icon src={email} />
-          <Typography variant="title2" color={color.white}>
+          <Icon src={email} style={{ marginRight: "10px" }} />
+          <Typography variant="bungee2" color={color.white}>
             {data.HyperLink.email}
           </Typography>
         </a>
@@ -89,8 +89,8 @@ const HyperLink: React.FC<HyperLinkProps> = ({
     case "icontypo_github":
       hyperLinkContent = (
         <a href={to} style={{ ...linkStyle }}>
-          <Icon src={github} />
-          <Typography variant="title2" color={color.white}>
+          <Icon src={github} style={{ marginRight: "10px" }} />
+          <Typography variant="bungee2" color={color.white}>
             {data.HyperLink.github}
           </Typography>
         </a>
@@ -99,8 +99,8 @@ const HyperLink: React.FC<HyperLinkProps> = ({
     case "icontypo_velog":
       hyperLinkContent = (
         <a href={to} style={{ ...linkStyle }}>
-          <Icon src={velog} />
-          <Typography variant="title2" color={color.white}>
+          <Icon src={velog} style={{ marginRight: "10px" }} />
+          <Typography variant="bungee2" color={color.white}>
             {data.HyperLink.velog}
           </Typography>
         </a>

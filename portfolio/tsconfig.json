@@ -27,7 +27,9 @@
       "@font": ["src/static/fonts/font.json"],
       "@style": ["src/static/styles/style.json"],
       "@icon": ["src/static/images/icon/*"],
-      "@image": ["src/static/images/image/*"]
+      "@image": ["src/static/images/image/*"],
+      "@lottie": ["src/static/lotties/lottie_web.json"],
+      "@lotties": ["src/static/lotties/*"]
     }
   },
   "include": ["src"],

@@ -1,0 +1,8 @@
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -100px; /* 위로 100px 이동 */
+  }
+}

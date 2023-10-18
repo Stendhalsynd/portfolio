@@ -17,7 +17,8 @@
     }
   },
   "padding": {
-    "pd30": "30px"
+    "pd30": "30px",
+    "pd10vw": "30px 10vw"
   },
   "margin": {
     "mg50": "50px"
