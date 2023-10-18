@@ -1,5 +1,8 @@
 import React, { CSSProperties } from "react"
 
+import { useRecoilValue } from "recoil"
+import { isMobileState } from "src/recoil"
+
 import { Typography } from "@atoms/index"
 import { LabelButton, Label } from "@molecules/index"
 import { Container } from "@organisms/index"
@@ -14,47 +17,92 @@ interface ActivitySectionProps {
 }
 
 const Activity: React.FC = () => {
+  const isMobile = useRecoilValue(isMobileState)
+
   return (
     <Container
       variant="column"
       style={{
         backgroundImage: `url(${background})`,
         background: "center center cover repeat",
-        backgroundSize: "contain",
-        padding: "40px 10vw",
-        alignItems: "flex-start",
+        backgroundSize: "50% auto",
+        padding: "40px 6vw",
+        animation: "moveBackground 3600s linear infinite",
+        paddingBottom: "80px",
       }}
     >
-      <LabelButton
-        content={data.LabelButton.default.activity}
-        variant={"default"}
-        style={{ marginBottom: "53px", alignSelf: "center" }}
-      />
-      <Container variant="column" style={{ alignItems: "flex-start" }}>
-        <ActivitySection />
+      <Container variant="column" style={{ width: "100%", maxWidth: "1400px" }}>
+        <LabelButton
+          content={data.LabelButton.default.activity}
+          variant={isMobile ? "default" : "bigdefault"}
+          style={{ marginBottom: "53px", alignSelf: "center" }}
+        />
+        <Container
+          variant="column"
+          style={{ alignItems: "flex-start", width: "100%" }}
+        >
+          <ActivitySection />
+        </Container>
       </Container>
     </Container>
   )
 }
 
-const ActivitySection: React.FC<ActivitySectionProps> = ({ style }) => (
-  <Container variant="column" style={{ ...style, alignItems: "flex-start" }}>
-    <Label>
-      <Typography variant="bungee36" color={color.lightlime}>
-        {data.Activity.group}
-      </Typography>
-    </Label>
-    <Label>
-      <Typography variant="bungee4" color={color.white}>
-        {data.Activity.period}
-      </Typography>
-    </Label>
-    <Label>
-      <Typography variant="bungee4title" color={color.yellow}>
-        {data.Activity.area}
-      </Typography>
-    </Label>
-  </Container>
-)
+const ActivitySection: React.FC<ActivitySectionProps> = ({ style }) => {
+  const isMobile = useRecoilValue(isMobileState)
+
+  return (
+    <Container
+      variant={isMobile ? "column" : "row"}
+      style={{
+        ...style,
+        justifyContent: isMobile ? "center" : "space-between",
+        width: "100%",
+      }}
+    >
+      <Label
+        style={{
+          width: "420px",
+        }}
+      >
+        <Typography
+          variant={isMobile ? "bungee36" : "bungee5"}
+          color={color.lightlime}
+        >
+          {data.Activity.group}
+        </Typography>
+      </Label>
+      <Container
+        variant="column"
+        style={{
+          alignItems: "flex-start",
+          width: isMobile ? 420 : "45vw",
+          paddingBottom: "30px",
+        }}
+      >
+        <Label
+          style={{
+            padding: "10px 0",
+          }}
+        >
+          <Typography
+            variant={isMobile ? "bungee4" : "bungee"}
+            color={color.white}
+          >
+            {data.Activity.period}
+          </Typography>
+        </Label>
+        <Label>
+          <Typography
+            variant={isMobile ? "bungee4title" : "bungee"}
+            color={color.yellow}
+          >
+            {data.Activity.area}
+          </Typography>
+        </Label>
+      </Container>
+    </Container>
+  )
+}
 
 export default Activity
