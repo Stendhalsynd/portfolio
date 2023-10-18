@@ -4,10 +4,7 @@ import { Divider } from "@atoms/index"
 import { LabelButton } from "@molecules/index"
 import { Container, AreaContainer, IconTypographyList } from "@organisms/index"
 
-import color from "@color"
 import data from "@data"
-import styles from "@style"
-import font from "@font"
 
 import background from "@image/img_background.png"
 

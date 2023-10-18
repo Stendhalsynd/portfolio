@@ -223,5 +223,23 @@
       "big": "big",
       "vector": "vector"
     }
-  }
+  },
+  "Career": [
+    {
+      "group": "LIFE OASIS",
+      "period": "2022.07 ~ 2023.04",
+      "area": "BACKEND, FRONTEND DEVELOPER"
+    },
+    {
+      "group": "LIFE OASIS",
+      "period": "2022.01 ~ 2022.06",
+      "area": "BACKEND DEVELOPER - INTERN"
+    }
+  ],
+  "Activity": {
+    "group": "CODINGON",
+    "period": "2023.07 ~ ",
+    "area": "KDT-WEB-8 WEB FULLSTACK"
+  },
+  "Footer": "DESIGNED BY HONGJIHUN"
 }

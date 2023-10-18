@@ -47,9 +47,10 @@ const renderLabelBlock = (labelData: LabelData[]) => {
 
 const Projects: React.FC<ProjectsProps> = ({ index, length, title }) => {
   const containerStyle = {
-    height: "140vh",
+    height: "fit-content",
     background: color.black5,
     padding: "45px 45px 23px",
+    width: "100vw",
   }
 
   return (

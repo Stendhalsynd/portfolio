@@ -17,8 +17,16 @@ import {
   Area,
   Container,
   AreaContainer,
+  Footer,
 } from "@organisms/index"
-import { Intro, AboutMe, Skills, Projects } from "@pages/index"
+import {
+  Intro,
+  AboutMe,
+  Skills,
+  Projects,
+  Career,
+  Activity,
+} from "@pages/index"
 
 import color from "@color"
 import data from "@data"
@@ -35,6 +43,9 @@ function App() {
       <AboutMe />
       <Skills />
       <Projects />
+      <Career />
+      <Activity />
+      <Footer />
       {/* <Typography variant={font.bungee5} color={color.lime}>
         test
       </Typography>

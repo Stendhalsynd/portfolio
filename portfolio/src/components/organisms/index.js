@@ -3,3 +3,4 @@ export { default as IconTypographyList } from "./IconTypographyList/IconTypograp
 export { default as Area } from "./Area/Area"
 export { default as Container } from "./Container/Container"
 export { default as AreaContainer } from "./AreaContainer/AreaContainer"
+export { default as Footer } from "./Footer/Footer"

@@ -1,15 +1,17 @@
-import { ReactNode } from "react"
+import { CSSProperties, ReactNode } from "react"
 
 export interface TypographyProps {
   children: ReactNode
   variant: string
   color?: string
+  style?: CSSProperties
 }
 
 const Typography: React.FC<TypographyProps> = ({
   children,
   variant,
   color = "black",
+  style,
 }) => {
   let fontFamily, fontSize, fontWeight, lineHeight
   switch (variant) {
@@ -82,7 +84,7 @@ const Typography: React.FC<TypographyProps> = ({
     lineHeight,
   }
 
-  return <span style={textStyle}>{children}</span>
+  return <span style={{ ...textStyle, ...style }}>{children}</span>
 }
 
 export default Typography
