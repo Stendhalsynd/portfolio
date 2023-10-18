@@ -1,19 +1,22 @@
 import React from "react"
 
+import { useRecoilValue } from "recoil"
+import { isMobileState } from "src/recoil"
+
 import { Typography } from "@atoms/index"
 import { Label } from "@molecules/index"
-import { Container } from "@organisms/index"
 
 import color from "@color"
 import data from "@data"
 
 const Footer: React.FC = () => {
+  const isMobile = useRecoilValue(isMobileState)
+
   const typographyStyle = {
     padding: "10px",
     display: "inline-block",
     WebkitTextStroke: "2px black",
     color: color.yellow,
-    fontSize: "21px",
     fontWeight: 800,
   }
 
@@ -25,7 +28,10 @@ const Footer: React.FC = () => {
       }}
     >
       <Label style={{ padding: "10px", background: color.white }}>
-        <Typography variant="bungee2" style={typographyStyle}>
+        <Typography
+          variant={isMobile ? "bungee4" : "bungee"}
+          style={typographyStyle}
+        >
           {data.Footer}
         </Typography>
       </Label>

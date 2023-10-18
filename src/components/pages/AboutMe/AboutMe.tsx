@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 
 import { useRecoilValue } from "recoil"
 import { isMobileState } from "src/recoil"
@@ -18,8 +18,16 @@ import avatar from "@image/img_avatar.png"
 
 import paperPlaneLottie from "../../../static/lotties/lottie_paperplane.json"
 
+import AOS from "aos"
+import "aos/dist/aos.css"
+
 const AboutMe: React.FC = () => {
   const isMobile = useRecoilValue(isMobileState)
+
+  useEffect(() => {
+    AOS.init()
+  }, [])
+
   const containerPadding = isMobile ? "45px" : "50px 4vw"
   const emailVariant = isMobile ? "icon_email" : "icontypo_email"
   const githubVariant = isMobile ? "icon_github" : "icontypo_github"

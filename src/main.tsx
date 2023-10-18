@@ -4,6 +4,7 @@ import { Provider } from "react-redux"
 import { RecoilRoot } from "recoil"
 import { store } from "./app/store"
 import App from "./App"
+
 import "./index.css"
 import "./static/fonts/font.css"
 

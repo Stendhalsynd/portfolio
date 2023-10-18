@@ -38,7 +38,7 @@ const AreaContainer: React.FC<AreaContainerProps> = ({
 
   const areaStyle: CSSProperties = {
     width: "fit-content",
-    maxWidth: "50vw",
+    maxWidth: "43vw",
     marginTop: "13.47px",
   }
 
