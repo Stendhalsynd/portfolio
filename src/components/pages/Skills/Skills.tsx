@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 
 import { useRecoilValue } from "recoil"
 import { isMobileState } from "src/recoil"
@@ -13,8 +13,16 @@ import data from "@data"
 
 import background from "@image/img_background.png"
 
+import AOS from "aos"
+import "aos/dist/aos.css"
+
 const Skills: React.FC = () => {
   const isMobile = useRecoilValue(isMobileState)
+
+  useEffect(() => {
+    AOS.init()
+  }, [])
+
   const labelButtonVariant = isMobile ? "default" : "bigdefault"
 
   return (

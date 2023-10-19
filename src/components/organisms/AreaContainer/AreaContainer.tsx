@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactNode } from "react"
+import React, { CSSProperties, ReactNode, useEffect } from "react"
 
 import { useRecoilValue } from "recoil"
 import { isMobileState } from "src/recoil"
@@ -7,6 +7,9 @@ import { Area, ImageList } from "@organisms/index"
 import { LabelButton } from "@molecules/index"
 
 import data from "@data"
+
+import AOS from "aos"
+import "aos/dist/aos.css"
 
 interface AreaContainerProps {
   variant: "left" | "right"
@@ -25,6 +28,10 @@ const AreaContainer: React.FC<AreaContainerProps> = ({
   style,
 }) => {
   const isMobile = useRecoilValue(isMobileState)
+
+  useEffect(() => {
+    AOS.init()
+  }, [])
 
   const containerStyle: CSSProperties = {
     display: "flex",
@@ -47,7 +54,11 @@ const AreaContainer: React.FC<AreaContainerProps> = ({
   switch (type) {
     case "frontend":
       areaContainerContent = (
-        <div style={containerStyle}>
+        <div
+          data-aos="fade-out"
+          data-aos-duration="1000"
+          style={containerStyle}
+        >
           <LabelButton
             content={data.LabelButton.font.frontend}
             variant={isMobile ? "font" : "bigfont"}
@@ -61,7 +72,11 @@ const AreaContainer: React.FC<AreaContainerProps> = ({
       break
     case "backend":
       areaContainerContent = (
-        <div style={containerStyle}>
+        <div
+          data-aos="fade-out"
+          data-aos-duration="1000"
+          style={containerStyle}
+        >
           <LabelButton
             content={data.LabelButton.font.backend}
             variant={isMobile ? "font" : "bigfont"}
@@ -75,7 +90,11 @@ const AreaContainer: React.FC<AreaContainerProps> = ({
       break
     case "deployment":
       areaContainerContent = (
-        <div style={containerStyle}>
+        <div
+          data-aos="fade-out"
+          data-aos-duration="1000"
+          style={containerStyle}
+        >
           <LabelButton
             content={data.LabelButton.font.deployment}
             variant={isMobile ? "font" : "bigfont"}
@@ -92,7 +111,11 @@ const AreaContainer: React.FC<AreaContainerProps> = ({
       break
     case "versioncontrol":
       areaContainerContent = (
-        <div style={containerStyle}>
+        <div
+          data-aos="fade-out"
+          data-aos-duration="1000"
+          style={containerStyle}
+        >
           <LabelButton
             content={data.LabelButton.font.versioncontrol}
             variant={isMobile ? "font" : "bigfont"}
@@ -109,7 +132,11 @@ const AreaContainer: React.FC<AreaContainerProps> = ({
       break
     case "communication":
       areaContainerContent = (
-        <div style={containerStyle}>
+        <div
+          data-aos="fade-out"
+          data-aos-duration="1000"
+          style={containerStyle}
+        >
           <LabelButton
             content={data.LabelButton.font.communication}
             variant={isMobile ? "font" : "bigfont"}

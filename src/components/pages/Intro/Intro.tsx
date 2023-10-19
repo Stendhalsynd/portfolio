@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 
 import { useRecoilValue } from "recoil"
 import { isMobileState } from "src/recoil"
@@ -13,12 +13,14 @@ import { Container } from "@organisms/index"
 
 import color from "@color"
 import data from "@data"
-import styles from "@style"
 
 import myImage from "@image/img_myImage.png"
 
 import arrowDownLottie from "../../../static/lotties/lottie_arrow_down.json"
 import webLottie from "../../../static/lotties/lottie_web.json"
+
+import AOS from "aos"
+import "aos/dist/aos.css"
 
 const TypographyWrapper = styled.div`
   width: 70vw;
@@ -31,6 +33,10 @@ const TypographyWrapper = styled.div`
 const Intro: React.FC = () => {
   const isMobile = useRecoilValue(isMobileState)
 
+  useEffect(() => {
+    AOS.init()
+  }, [])
+
   let typoVariant = isMobile ? "bungee5" : "bungee75"
   let buttonVariant = isMobile ? "double" : "bigdouble"
   let imageHeight = isMobile ? 336 : 473
@@ -40,7 +46,12 @@ const Intro: React.FC = () => {
     <Container variant="column" style={{ background: color.white, zIndex: 1 }}>
       <Container variant="column">
         <TypographyWrapper>
-          <Label>
+          <Label
+            dataAos="fade-right"
+            dataAosOffset="200"
+            dataAosEasing="ease-in-sine"
+            dataAosDuration="500"
+          >
             <Typography variant={typoVariant} color={color.black2}>
               {data.Intro.name.lastname}&nbsp;
             </Typography>
@@ -48,12 +59,22 @@ const Intro: React.FC = () => {
               {data.Intro.name.firstname}
             </Typography>
           </Label>
-          <Label>
+          <Label
+            dataAos="fade-right"
+            dataAosOffset="400"
+            dataAosEasing="ease-in-sine"
+            dataAosDuration="800"
+          >
             <Typography variant={typoVariant} color={color.black3}>
               {data.Intro.area}
             </Typography>
           </Label>
-          <Label>
+          <Label
+            dataAos="fade-right"
+            dataAosOffset="600"
+            dataAosEasing="ease-in-sine"
+            dataAosDuration="1100"
+          >
             <Typography variant={typoVariant} color={color.black4}>
               {data.Intro.job}
             </Typography>

@@ -38,6 +38,9 @@ const AboutMe: React.FC = () => {
       variant="column"
       style={{ background: color.lime, padding: "50px 35px" }}
     >
+      {/* <div data-aos="fade-up" style={{ border: "5px solid red" }}>
+        test
+      </div> */}
       <Container variant="column" style={{ maxWidth: "1200px" }}>
         <LabelButton
           variant="default"
@@ -64,11 +67,11 @@ const AboutMe: React.FC = () => {
                 animationData={paperPlaneLottie}
                 play
                 style={{
-                  width: 130,
+                  width: 200,
                   height: 130,
                   position: "absolute",
-                  top: "-28px",
-                  left: "0px",
+                  top: "-19px",
+                  left: "-53px",
                 }}
               />
             </Container>
@@ -77,7 +80,12 @@ const AboutMe: React.FC = () => {
               style={{ alignItems: "flex-start", padding: "10vw 0" }}
             >
               {data.Container.Label.map((label, labelIndex) => (
-                <Label key={labelIndex} style={{ padding: "10px 1.5vw" }}>
+                <Label
+                  dataAos="fade-up"
+                  dataAosDuration="1000"
+                  key={labelIndex}
+                  style={{ padding: "10px 1.5vw" }}
+                >
                   {label.Typography.map((text, textIndex) => (
                     <Typography
                       key={textIndex}

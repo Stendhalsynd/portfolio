@@ -1,4 +1,4 @@
-import React, { CSSProperties } from "react"
+import React, { CSSProperties, useEffect } from "react"
 
 import { useRecoilValue } from "recoil"
 import { isMobileState } from "src/recoil"
@@ -12,12 +12,19 @@ import color from "@color"
 
 import background from "@image/img_background.png"
 
+import AOS from "aos"
+import "aos/dist/aos.css"
+
 interface CareerSectionProps {
   index: number
   style?: CSSProperties
 }
 
 const Career: React.FC = () => {
+  useEffect(() => {
+    AOS.init()
+  }, [])
+
   const isMobile = useRecoilValue(isMobileState)
 
   return (
@@ -62,6 +69,8 @@ const CareerSection: React.FC<CareerSectionProps> = ({ index, style }) => {
       }}
     >
       <Label
+        dataAos="fade-up"
+        dataAosDuration="500"
         style={{
           width: "420px",
         }}
@@ -81,6 +90,8 @@ const CareerSection: React.FC<CareerSectionProps> = ({ index, style }) => {
         }}
       >
         <Label
+          dataAos="fade-up"
+          dataAosDuration="500"
           style={{
             padding: "10px 0",
           }}
@@ -92,7 +103,7 @@ const CareerSection: React.FC<CareerSectionProps> = ({ index, style }) => {
             {data.Career[index].period}
           </Typography>
         </Label>
-        <Label>
+        <Label dataAos="fade-up" dataAosDuration="500">
           <Typography
             variant={isMobile ? "bungee4title" : "bungee"}
             color={color.yellow}

@@ -1,4 +1,4 @@
-import React, { CSSProperties } from "react"
+import React, { CSSProperties, useEffect } from "react"
 
 import { useRecoilValue } from "recoil"
 import { isMobileState } from "src/recoil"
@@ -12,12 +12,19 @@ import color from "@color"
 
 import background from "@image/img_background.png"
 
+import AOS from "aos"
+import "aos/dist/aos.css"
+
 interface ActivitySectionProps {
   style?: CSSProperties
 }
 
 const Activity: React.FC = () => {
   const isMobile = useRecoilValue(isMobileState)
+
+  useEffect(() => {
+    AOS.init()
+  }, [])
 
   return (
     <Container
@@ -61,6 +68,8 @@ const ActivitySection: React.FC<ActivitySectionProps> = ({ style }) => {
       }}
     >
       <Label
+        dataAos="fade-up"
+        dataAosDuration="500"
         style={{
           width: "420px",
         }}
@@ -81,6 +90,8 @@ const ActivitySection: React.FC<ActivitySectionProps> = ({ style }) => {
         }}
       >
         <Label
+          dataAos="fade-up"
+          dataAosDuration="500"
           style={{
             padding: "10px 0",
           }}
@@ -92,7 +103,7 @@ const ActivitySection: React.FC<ActivitySectionProps> = ({ style }) => {
             {data.Activity.period}
           </Typography>
         </Label>
-        <Label>
+        <Label dataAos="fade-up" dataAosDuration="500">
           <Typography
             variant={isMobile ? "bungee4title" : "bungee"}
             color={color.yellow}
