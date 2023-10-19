@@ -3,6 +3,8 @@ import React from "react"
 import { useRecoilValue } from "recoil"
 import { isMobileState, currentWidthState } from "src/recoil"
 
+import Lottie from "react-lottie-player"
+
 import { Typography, Image } from "@atoms/index"
 import {
   Label,
@@ -19,6 +21,9 @@ import data from "@data"
 import color from "@color"
 
 import background from "@image/img_background.png"
+
+import websiteLottie from "../../../static/lotties/lottie_website.json"
+import websiteLottie2 from "../../../static/lotties/lottie_website.json"
 
 interface ProjectsProps {
   index?: number
@@ -192,9 +197,10 @@ const Projects: React.FC<ProjectsProps> = ({ index, length, title }) => {
         <Container
           variant="column"
           style={{
-            padding: "31.5px 70px 36.91px",
+            padding: isMobile ? "90px 70px " : "230px 70px",
             width: "60vw",
             overflow: "auto",
+            position: "relative",
           }}
         >
           {/* <Area
@@ -204,6 +210,19 @@ const Projects: React.FC<ProjectsProps> = ({ index, length, title }) => {
             variant="sub_menu"
             style={{ marginBottom: "30px" }}
           /> */}
+          <Lottie
+            loop
+            animationData={websiteLottie}
+            play
+            style={{
+              width: isMobile ? 200 : 300,
+              height: isMobile ? 200 : 300,
+              position: "absolute",
+              top: "-45px",
+              // left: isMobile ? "290px" : "350px",
+              right: "7vw",
+            }}
+          />
           <Image
             src={beautylab}
             height={
@@ -339,9 +358,10 @@ const Projects: React.FC<ProjectsProps> = ({ index, length, title }) => {
         <Container
           variant="column"
           style={{
-            padding: "31.5px 70px 36.91px",
+            padding: isMobile ? "90px 70px " : "230px 70px",
             width: "60vw",
             overflow: "auto",
+            position: "relative",
           }}
         >
           {/* <Area
@@ -350,6 +370,19 @@ const Projects: React.FC<ProjectsProps> = ({ index, length, title }) => {
             title={data.Area[1].title}
             variant="sub_menu"
           /> */}
+          <Lottie
+            loop
+            animationData={websiteLottie2}
+            play
+            style={{
+              width: isMobile ? 200 : 300,
+              height: isMobile ? 200 : 300,
+              position: "absolute",
+              top: "-45px",
+              // left: isMobile ? "290px" : "350px",
+              right: "7vw",
+            }}
+          />
           <Image
             src={doit}
             height={
