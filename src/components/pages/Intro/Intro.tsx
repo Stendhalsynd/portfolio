@@ -48,7 +48,7 @@ const Intro: React.FC = () => {
         <TypographyWrapper>
           <Label
             dataAos="fade-right"
-            dataAosOffset="200"
+            dataAosOffset="150"
             dataAosEasing="ease-in-sine"
             dataAosDuration="500"
           >
@@ -61,7 +61,7 @@ const Intro: React.FC = () => {
           </Label>
           <Label
             dataAos="fade-right"
-            dataAosOffset="400"
+            dataAosOffset="300"
             dataAosEasing="ease-in-sine"
             dataAosDuration="800"
           >
@@ -71,7 +71,7 @@ const Intro: React.FC = () => {
           </Label>
           <Label
             dataAos="fade-right"
-            dataAosOffset="600"
+            dataAosOffset="450"
             dataAosEasing="ease-in-sine"
             dataAosDuration="1100"
           >
