@@ -197,7 +197,7 @@ const Projects: React.FC<ProjectsProps> = ({ index, length, title }) => {
         <Container
           variant="column"
           style={{
-            padding: isMobile ? "90px 70px " : "230px 70px",
+            padding: isMobile ? "90px 70px " : "200px 70px",
             width: "60vw",
             overflow: "auto",
             position: "relative",
@@ -358,7 +358,7 @@ const Projects: React.FC<ProjectsProps> = ({ index, length, title }) => {
         <Container
           variant="column"
           style={{
-            padding: isMobile ? "90px 70px " : "230px 70px",
+            padding: isMobile ? "90px 70px " : "200px 70px",
             width: "60vw",
             overflow: "auto",
             position: "relative",
