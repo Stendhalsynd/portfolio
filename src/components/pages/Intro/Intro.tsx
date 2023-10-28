@@ -132,7 +132,7 @@ const Intro: React.FC = () => {
         </Container>
       </Container>
 
-      <Lottie
+      {/* <Lottie
         loop
         animationData={arrowDownLottie}
         play
@@ -143,7 +143,7 @@ const Intro: React.FC = () => {
           top: iconTop,
           left: "calc(50% - 20vw)",
         }}
-      />
+      /> */}
     </Container>
   )
 }
