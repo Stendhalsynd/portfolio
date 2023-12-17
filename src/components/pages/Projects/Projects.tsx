@@ -16,6 +16,7 @@ import { Area, Container } from "@organisms/index"
 
 import beautylab from "@image/img_project1_screen1.png"
 import doit from "@image/img_project2_screen1.png"
+import careerup from "@image/img_careerup.png"
 
 import data from "@data"
 import color from "@color"
@@ -81,7 +82,7 @@ const Projects: React.FC<ProjectsProps> = ({ index, length, title }) => {
       }}
     >
       <LabelButton content={data.LabelButton.default.skills} variant={"lime"} />
-      {/* 1번 프로젝트 Beauty Lab */}
+      {/* 1번 프로젝트 Career Up */}
       <Container
         variant={isMobile ? "column" : "row"}
         style={{
@@ -93,18 +94,167 @@ const Projects: React.FC<ProjectsProps> = ({ index, length, title }) => {
       >
         <Container
           variant="column"
-          style={{
-            ...containerStyle,
-            boxSizing: "border-box",
-            position: "relative",
-          }}
+          style={{ ...containerStyle, boxSizing: "border-box" }}
         >
           <Area
             index={0}
             length={data.Area.length}
+            title={data.Area[2].title}
+            variant="main_menu"
+          />
+          <Container
+            variant="column"
+            style={{
+              width: "100%",
+              alignItems: "flex-start",
+              marginTop: "30px",
+            }}
+          >
+            <Label style={{ padding: "5px 0" }}>
+              <Typography variant="title2" color={color.black3}>
+                {data.Area[2].period}
+              </Typography>
+            </Label>
+            <Label style={{ padding: "5px 0" }}>
+              <Typography variant="title2" color={color.black3}>
+                {data.Area[2].scale}
+              </Typography>
+            </Label>
+            {renderLabelBlock(data.Area[2].Label)}
+            <Container
+              variant="column"
+              style={{
+                marginTop: "20px",
+                alignContent: "space-between",
+                width: "100%",
+              }}
+            >
+              <Container
+                variant="row"
+                style={{
+                  justifyContent: "space-between",
+                  width: "100%",
+                  padding: "10px 0",
+                }}
+              >
+                <IconTypographyButton
+                  content={data.IconTypography.button.feature}
+                />
+                <Label style={{ padding: "0 15px", maxWidth: "40vw" }}>
+                  <Typography variant="title2">
+                    {data.Area[2].Skills.feature.label}
+                  </Typography>
+                </Label>
+              </Container>
+              <Container
+                variant="row"
+                style={{
+                  justifyContent: "space-between",
+                  width: "100%",
+                  padding: "10px 0",
+                }}
+              >
+                <IconTypographyButton
+                  content={data.IconTypography.button.frontend}
+                />
+                <Label style={{ padding: "0 15px", maxWidth: "40vw" }}>
+                  <Typography variant="title2">
+                    {data.Area[2].Skills.frontend.label}
+                  </Typography>
+                </Label>
+              </Container>
+              <Container
+                variant="row"
+                style={{
+                  justifyContent: "space-between",
+                  width: "100%",
+                  padding: "10px 0",
+                }}
+              >
+                <IconTypographyButton
+                  content={data.IconTypography.button.backend}
+                />
+                <Label style={{ padding: "0 15px", maxWidth: "40vw" }}>
+                  <Typography variant="title2">
+                    {data.Area[2].Skills.backend?.label}
+                  </Typography>
+                </Label>
+              </Container>
+              <Container
+                variant="row"
+                style={{
+                  justifyContent: "space-between",
+                  width: "100%",
+                  padding: "10px 0",
+                }}
+              >
+                <IconTypographyButton
+                  content={data.IconTypography.button.deployment}
+                />
+                <Label style={{ padding: "0 15px", maxWidth: "40vw" }}>
+                  <Typography variant="title2">
+                    {data.Area[2].Skills.deployment.label}
+                  </Typography>
+                </Label>
+              </Container>
+              <HyperLinkSection domain={2} />
+            </Container>
+          </Container>
+        </Container>
+        <Container
+          variant="column"
+          style={{
+            padding: isMobile ? "90px 70px " : "200px 70px",
+            width: "60vw",
+            overflow: "auto",
+            position: "relative",
+          }}
+        >
+          <Lottie
+            loop
+            animationData={websiteLottie2}
+            play
+            style={{
+              width: isMobile ? 200 : 300,
+              height: isMobile ? 200 : 300,
+              position: "absolute",
+              top: "-45px",
+              right: "7vw",
+            }}
+          />
+          <Image
+            src={careerup}
+            height={
+              isMobile
+                ? 300
+                : currentWidth < 1090
+                ? currentWidth * 0.3
+                : "450vw"
+            }
+            style={{ marginTop: "32px" }}
+          />
+        </Container>
+      </Container>
+      {/* 2번 프로젝트 Do IT */}
+      <Container
+        variant={isMobile ? "column" : "row"}
+        style={{
+          background: color.white,
+          width: "100vw",
+          marginTop: "45px",
+          maxWidth: "1400px",
+          borderRadius: "50px",
+        }}
+      >
+        <Container
+          variant="column"
+          style={{ ...containerStyle, boxSizing: "border-box" }}
+        >
+          <Area
+            index={1}
+            length={data.Area.length}
             title={data.Area[0].title}
             variant="main_menu"
-            style={{ marginTop: "15px" }}
           />
           <Container
             variant="column"
@@ -144,13 +294,7 @@ const Projects: React.FC<ProjectsProps> = ({ index, length, title }) => {
                 <IconTypographyButton
                   content={data.IconTypography.button.feature}
                 />
-                <Label
-                  style={{
-                    padding: "0 15px",
-                    maxWidth: "40vw",
-                    textAlign: "end",
-                  }}
-                >
+                <Label style={{ padding: "0 15px", maxWidth: "40vw" }}>
                   <Typography variant="title2">
                     {data.Area[0].Skills.feature.label}
                   </Typography>
@@ -182,6 +326,23 @@ const Projects: React.FC<ProjectsProps> = ({ index, length, title }) => {
                 }}
               >
                 <IconTypographyButton
+                  content={data.IconTypography.button.backend}
+                />
+                <Label style={{ padding: "0 15px", maxWidth: "40vw" }}>
+                  <Typography variant="title2">
+                    {data.Area[0].Skills.backend?.label}
+                  </Typography>
+                </Label>
+              </Container>
+              <Container
+                variant="row"
+                style={{
+                  justifyContent: "space-between",
+                  width: "100%",
+                  padding: "10px 0",
+                }}
+              >
+                <IconTypographyButton
                   content={data.IconTypography.button.deployment}
                 />
                 <Label style={{ padding: "0 15px", maxWidth: "40vw" }}>
@@ -191,6 +352,154 @@ const Projects: React.FC<ProjectsProps> = ({ index, length, title }) => {
                 </Label>
               </Container>
               <HyperLinkSection domain={0} />
+            </Container>
+          </Container>
+        </Container>
+        <Container
+          variant="column"
+          style={{
+            padding: isMobile ? "90px 70px " : "200px 70px",
+            width: "60vw",
+            overflow: "auto",
+            position: "relative",
+          }}
+        >
+          <Lottie
+            loop
+            animationData={websiteLottie2}
+            play
+            style={{
+              width: isMobile ? 200 : 300,
+              height: isMobile ? 200 : 300,
+              position: "absolute",
+              top: "-45px",
+              right: "7vw",
+            }}
+          />
+          <Image
+            src={doit}
+            height={
+              isMobile
+                ? 300
+                : currentWidth < 1090
+                ? currentWidth * 0.3
+                : "450vw"
+            }
+            style={{ marginTop: "32px" }}
+          />
+        </Container>
+      </Container>
+      {/* 3번 프로젝트 Beauty Lab */}
+      <Container
+        variant={isMobile ? "column" : "row"}
+        style={{
+          background: color.white,
+          width: "100vw",
+          maxWidth: "1400px",
+          marginTop: "45px",
+          borderRadius: "50px",
+        }}
+      >
+        <Container
+          variant="column"
+          style={{
+            ...containerStyle,
+            boxSizing: "border-box",
+            position: "relative",
+          }}
+        >
+          <Area
+            index={2}
+            length={data.Area.length}
+            title={data.Area[1].title}
+            variant="main_menu"
+            style={{ marginTop: "15px" }}
+          />
+          <Container
+            variant="column"
+            style={{
+              width: "100%",
+              alignItems: "flex-start",
+              marginTop: "30px",
+            }}
+          >
+            <Label style={{ padding: "5px 0" }}>
+              <Typography variant="title2" color={color.black3}>
+                {data.Area[1].period}
+              </Typography>
+            </Label>
+            <Label style={{ padding: "5px 0" }}>
+              <Typography variant="title2" color={color.black3}>
+                {data.Area[1].scale}
+              </Typography>
+            </Label>
+            {renderLabelBlock(data.Area[1].Label)}
+            <Container
+              variant="column"
+              style={{
+                marginTop: "20px",
+                alignContent: "space-between",
+                width: "100%",
+              }}
+            >
+              <Container
+                variant="row"
+                style={{
+                  justifyContent: "space-between",
+                  width: "100%",
+                  padding: "10px 0",
+                }}
+              >
+                <IconTypographyButton
+                  content={data.IconTypography.button.feature}
+                />
+                <Label
+                  style={{
+                    padding: "0 15px",
+                    maxWidth: "40vw",
+                    textAlign: "end",
+                  }}
+                >
+                  <Typography variant="title2">
+                    {data.Area[1].Skills.feature.label}
+                  </Typography>
+                </Label>
+              </Container>
+              <Container
+                variant="row"
+                style={{
+                  justifyContent: "space-between",
+                  width: "100%",
+                  padding: "10px 0",
+                }}
+              >
+                <IconTypographyButton
+                  content={data.IconTypography.button.frontend}
+                />
+                <Label style={{ padding: "0 15px", maxWidth: "40vw" }}>
+                  <Typography variant="title2">
+                    {data.Area[1].Skills.frontend.label}
+                  </Typography>
+                </Label>
+              </Container>
+              <Container
+                variant="row"
+                style={{
+                  justifyContent: "space-between",
+                  width: "100%",
+                  padding: "10px 0",
+                }}
+              >
+                <IconTypographyButton
+                  content={data.IconTypography.button.deployment}
+                />
+                <Label style={{ padding: "0 15px", maxWidth: "40vw" }}>
+                  <Typography variant="title2">
+                    {data.Area[1].Skills.deployment.label}
+                  </Typography>
+                </Label>
+              </Container>
+              <HyperLinkSection domain={1} />
             </Container>
           </Container>
         </Container>
@@ -232,167 +541,6 @@ const Projects: React.FC<ProjectsProps> = ({ index, length, title }) => {
                 ? currentWidth * 0.3
                 : "450vw"
             }
-          />
-        </Container>
-      </Container>
-      {/* 2번 프로젝트 Do IT */}
-      <Container
-        variant={isMobile ? "column" : "row"}
-        style={{
-          background: color.white,
-          width: "100vw",
-          marginTop: "45px",
-          maxWidth: "1400px",
-          borderRadius: "50px",
-        }}
-      >
-        <Container
-          variant="column"
-          style={{ ...containerStyle, boxSizing: "border-box" }}
-        >
-          <Area
-            index={1}
-            length={data.Area.length}
-            title={data.Area[1].title}
-            variant="main_menu"
-          />
-          <Container
-            variant="column"
-            style={{
-              width: "100%",
-              alignItems: "flex-start",
-              marginTop: "30px",
-            }}
-          >
-            <Label style={{ padding: "5px 0" }}>
-              <Typography variant="title2" color={color.black3}>
-                {data.Area[1].period}
-              </Typography>
-            </Label>
-            <Label style={{ padding: "5px 0" }}>
-              <Typography variant="title2" color={color.black3}>
-                {data.Area[1].scale}
-              </Typography>
-            </Label>
-            {renderLabelBlock(data.Area[1].Label)}
-            <Container
-              variant="column"
-              style={{
-                marginTop: "20px",
-                alignContent: "space-between",
-                width: "100%",
-              }}
-            >
-              <Container
-                variant="row"
-                style={{
-                  justifyContent: "space-between",
-                  width: "100%",
-                  padding: "10px 0",
-                }}
-              >
-                <IconTypographyButton
-                  content={data.IconTypography.button.feature}
-                />
-                <Label style={{ padding: "0 15px", maxWidth: "40vw" }}>
-                  <Typography variant="title2">
-                    {data.Area[1].Skills.feature.label}
-                  </Typography>
-                </Label>
-              </Container>
-              <Container
-                variant="row"
-                style={{
-                  justifyContent: "space-between",
-                  width: "100%",
-                  padding: "10px 0",
-                }}
-              >
-                <IconTypographyButton
-                  content={data.IconTypography.button.frontend}
-                />
-                <Label style={{ padding: "0 15px", maxWidth: "40vw" }}>
-                  <Typography variant="title2">
-                    {data.Area[1].Skills.frontend.label}
-                  </Typography>
-                </Label>
-              </Container>
-              <Container
-                variant="row"
-                style={{
-                  justifyContent: "space-between",
-                  width: "100%",
-                  padding: "10px 0",
-                }}
-              >
-                <IconTypographyButton
-                  content={data.IconTypography.button.backend}
-                />
-                <Label style={{ padding: "0 15px", maxWidth: "40vw" }}>
-                  <Typography variant="title2">
-                    {data.Area[1].Skills.backend?.label}
-                  </Typography>
-                </Label>
-              </Container>
-              <Container
-                variant="row"
-                style={{
-                  justifyContent: "space-between",
-                  width: "100%",
-                  padding: "10px 0",
-                }}
-              >
-                <IconTypographyButton
-                  content={data.IconTypography.button.deployment}
-                />
-                <Label style={{ padding: "0 15px", maxWidth: "40vw" }}>
-                  <Typography variant="title2">
-                    {data.Area[1].Skills.deployment.label}
-                  </Typography>
-                </Label>
-              </Container>
-              <HyperLinkSection domain={1} />
-            </Container>
-          </Container>
-        </Container>
-        <Container
-          variant="column"
-          style={{
-            padding: isMobile ? "90px 70px " : "200px 70px",
-            width: "60vw",
-            overflow: "auto",
-            position: "relative",
-          }}
-        >
-          {/* <Area
-            index={1}
-            length={data.Area.length}
-            title={data.Area[1].title}
-            variant="sub_menu"
-          /> */}
-          <Lottie
-            loop
-            animationData={websiteLottie2}
-            play
-            style={{
-              width: isMobile ? 200 : 300,
-              height: isMobile ? 200 : 300,
-              position: "absolute",
-              top: "-45px",
-              // left: isMobile ? "290px" : "350px",
-              right: "7vw",
-            }}
-          />
-          <Image
-            src={doit}
-            height={
-              isMobile
-                ? 300
-                : currentWidth < 1090
-                ? currentWidth * 0.3
-                : "450vw"
-            }
-            style={{ marginTop: "32px" }}
           />
         </Container>
       </Container>
