@@ -87,14 +87,20 @@
   },
   "IconTypography": {
     "listItem": [
+      "MVP 기반 업무의 우선순위를 나누며 애자일 중심 스크럼 회의 방식에 익숙합니다.",
       "BEM 방법론과 SCSS 를 능숙하게 사용할 수 있습니다.",
       "Antd, Bootstrap, styled-component, CSS Module 을 활용할 수 있습니다.",
       "css 애니메이션과 js 애니메이션 사용에 익숙합니다.",
       "Restful 한 네이밍 컨벤션을 지키려 노력합니다.",
+      "next.js 를 통한 SSR 방식의 컴포넌트 활용에 익숙하며 이를 통해 SEO 를 최적화할 수 있습니다.",
+      "전역 상태관리를 위해 redux 와 recoil 을 사용하는데 익숙합니다.",
       "typescript, golang, javascript 를 사용하여 mvc 패턴의 서버를 만들어 REST API 를 활용할 수 있습니다.",
       "typeorm, gorm, sequelize 를 통해 orm 을 자유롭게 사용할 수 있습니다.",
+      "eslint 와 prettier 를 통해 일관성 있는 코딩컨벤션을 적용할 수 있습니다.",
       "Gitlab 의 CI/CD 를 활용할 수 있습니다.",
+      "반복적인 작업을 최소화하기 위한 자동화에 관심이 많아 Gitlab CI/CD 뿐 아니라 github actions 를 통해 자동 배포를 할 수 있습니다.",
       "vitest 를 활용한 테스트 작성 경험이 있습니다.",
+      "WebRTC 기술을 활용해 화상 채팅 기능을 활용할 수 있습니다.",
       "좋은 개발문화에 대해 항상 고민합니다.",
       "AWS 의 EC2, RDS, S3 를 활용할 수 있습니다.",
       "Figma 툴 사용에 익숙합니다."
@@ -110,7 +116,26 @@
     }
   },
   "ImageList": {
-    "frontend": ["html", "css", "js", "ts", "sass", "redux", "react", "recoil"],
+    "frontend": [
+      "html",
+      "css",
+      "js",
+      "ts",
+      "sass",
+      "redux",
+      "react",
+      "recoil",
+      "next",
+      "reacthookform",
+      "eslint",
+      "prettier",
+      "storybook",
+      "chromatic",
+      "styledcomponent",
+      "openvidu",
+      "mui",
+      "webrtc"
+    ],
     "backend": [
       "python",
       "java",
@@ -123,7 +148,15 @@
       "springboot",
       "mysql"
     ],
-    "deployment": ["ec2", "docker", "pm2", "netlify", "gitlab_cicd"],
+    "deployment": [
+      "ec2",
+      "docker",
+      "pm2",
+      "netlify",
+      "gitlab_cicd",
+      "github_action",
+      "vercel"
+    ],
     "versioncontrol": ["fork", "git", "gitlab", "github"],
     "communication": ["notion", "jira", "slack", "figma"]
   },
